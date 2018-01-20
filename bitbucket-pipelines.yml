@@ -13,4 +13,4 @@ pipelines:
         caches:
           - maven
         script:
-          - mvn -B verify 
+          - mvn -B verify
