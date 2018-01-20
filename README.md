@@ -14,4 +14,4 @@ Just have maven and the IDE that you prefer, clone the project (instructions in 
 
 Felipe Christian Lautenschlager (author)
 	felipelauten@gmail.com
-	+48535728562
+	tel:+48535728562
