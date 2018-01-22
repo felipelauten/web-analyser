@@ -20,12 +20,20 @@ public class UrlAnalisysRestRepository {
      * @param url
      * @return
      */
-    public Optional<String> getHtmlFromUrl(String url) {
+    public Optional<String> getHtmlFromUrl(String url) throws Exception {
         ResponseEntity<String> entity = template.getForEntity(url, String.class);
 
-        if (entity.getStatusCode().is2xxSuccessful()) {
-            return Optional.of(entity.getBody());
-        }
+        do {
+            if (entity.getStatusCode().is4xxClientError()) {
+                throw new Exception("The requested page was not found");
+            }
+            if (entity.getStatusCode().is5xxServerError()) {
+                throw new Exception("The requested page returned an 500 error");
+            }
+            if (entity.getStatusCode().is2xxSuccessful()) {
+                return Optional.of(entity.getBody());
+            }
+        } while (entity.getStatusCode().is3xxRedirection());
         return Optional.empty();
     }
 

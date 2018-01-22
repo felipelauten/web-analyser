@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8aa63ecd-fc48-4de1-a9a7-7968e55e2df8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_11_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/Algorithm.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/EmptyAlgorithm.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/HtmlPageTitleAlgorithm.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/enums/HtmlVersion.java" />
+    <list default="true" id="8aa63ecd-fc48-4de1-a9a7-7968e55e2df8" name="Default" comment="Page redirection handeling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
-      <change beforePath="$PROJECT_DIR$/web-analyzer-rest.iml" afterPath="$PROJECT_DIR$/web-analyzer-rest.iml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.java" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UrlAnalysisServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UrlAnalysisServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/Algorithm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,98 +61,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KQueueArrayWrapper.class" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/KQueueArrayWrapper.class">
+      <file leaf-file-name="UrlAnalisysRestRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
               <folding>
-                <marker date="1504666619000" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1504666619000" expanded="false" signature="134:295" ph="..." />
-                <marker date="1504666619000" expanded="true" signature="850:1056" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="1101:1235" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="1268:1583" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="1617:1905" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="1954:2130" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="2165:2566" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="2599:3071" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="3109:3358" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="3384:3526" ph="{...}" />
-                <marker date="1504666619000" expanded="false" signature="3548:3559" ph=" { " />
-                <marker date="1504666619000" expanded="false" signature="3595:3601" ph=" }" />
-                <marker date="1504666619000" expanded="true" signature="3901:4102" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="4136:4309" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="4227:4303" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KQueueSelectorImpl.class" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/KQueueSelectorImpl.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding>
-                <marker date="1504666619000" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1504666619000" expanded="false" signature="134:383" ph="..." />
-                <marker date="1504666619000" expanded="true" signature="823:1595" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="1654:2122" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="2188:3909" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="3961:5013" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="5070:5379" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="5452:5871" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="5934:6108" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="6139:6421" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="6457:6602" ph="{...}" />
-                <marker date="1504666619000" expanded="false" signature="6555:6570" ph=" { " />
-                <marker date="1504666619000" expanded="false" signature="6586:6596" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectorImpl.class" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/SelectorImpl.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-              <folding>
-                <marker date="1504666619000" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1504666619000" expanded="false" signature="134:617" ph="..." />
-                <marker date="1504666619000" expanded="true" signature="944:1283" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="1321:1497" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="1543:1727" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="1859:2395" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="2449:2642" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="2687:2726" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="2774:2822" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="2879:3211" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="3335:3342" ph="{}" />
-                <marker date="1504666619000" expanded="true" signature="3441:3882" ph="{...}" />
-                <marker date="1504666619000" expanded="true" signature="4003:4624" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NioEndpoint.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.23/tomcat-embed-core-8.5.23-sources.jar!/org/apache/tomcat/util/net/NioEndpoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="792" column="0" lean-forward="false" selection-start-line="792" selection-start-column="0" selection-end-line="792" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Element.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.11.2/jsoup-1.11.2-sources.jar!/org/jsoup/nodes/Element.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="1010" column="0" lean-forward="false" selection-start-line="1010" selection-start-column="0" selection-end-line="1010" selection-end-column="0" />
-              <folding>
-                <element signature="e#36922#36923#0" expanded="true" />
+                <element signature="e#1271#1272#0" expanded="true" />
+                <element signature="e#1311#1312#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -172,13 +77,22 @@
       <file leaf-file-name="HtmlPageTitleAlgorithm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/HtmlPageTitleAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1182#1183#0" expanded="true" />
+                <element signature="e#1057#1058#0" expanded="true" />
+                <element signature="e#1107#1108#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlgorithmFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -222,7 +136,6 @@
         <option value="$PROJECT_DIR$/bitbucket-pipelines.yml" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/ErrorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/AnalysisOutput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalisysService.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
@@ -230,12 +143,13 @@
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/enums/HtmlVersion.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/PageTitleAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/EmptyAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/Algorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/Html5PageTitleAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/HtmlPageTitleAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.java" />
       </list>
     </option>
   </component>
@@ -345,6 +259,15 @@
               <item name="webanalyzerrest" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-analyzer-rest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-analyzer-rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webanalyzerrest" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="web-analyzer-rest" type="b2602c69:ProjectViewProjectNode" />
@@ -575,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516598741595</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Foundation for the algorithm processing&#10;&#10;- Implemented logic for first algorithm;&#10;- Design using autowired services.">
+      <created>1516607295246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1516607295246</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -589,7 +519,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36759776" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -619,7 +549,9 @@
     <MESSAGE value="+Added new controller method" />
     <MESSAGE value="Fixed POM configuration adding reactor modules" />
     <MESSAGE value="Introducing web analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introducing web analysis" />
+    <MESSAGE value="Foundation for the algorithm processing&#10;&#10;- Implemented logic for first algorithm;&#10;- Design using autowired services." />
+    <MESSAGE value="Page redirection handeling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page redirection handeling" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -629,21 +561,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java</url>
-          <line>31</line>
+          <line>32</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/Algorithm.java</url>
-          <line>33</line>
+          <line>36</line>
           <properties />
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -980,38 +918,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/EmptyAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-            <element signature="e#409#410#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#994#995#0" expanded="false" />
-            <element signature="e#1037#1038#0" expanded="false" />
-            <element signature="e#1097#1098#0" expanded="false" />
-            <element signature="e#1140#1141#0" expanded="false" />
+            <element signature="e#365#366#0" expanded="false" />
+            <element signature="e#392#393#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1032,32 +946,7 @@
         <state relative-caret-position="206">
           <caret line="1010" column="0" lean-forward="false" selection-start-line="1010" selection-start-column="0" selection-end-line="1010" selection-end-column="0" />
           <folding>
-            <element signature="e#36922#36923#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/KQueueArrayWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding>
-            <marker date="1504666619000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1504666619000" expanded="false" signature="134:295" ph="..." />
-            <marker date="1504666619000" expanded="true" signature="850:1056" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="1101:1235" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="1268:1583" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="1617:1905" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="1954:2130" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="2165:2566" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="2599:3071" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="3109:3358" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="3384:3526" ph="{...}" />
-            <marker date="1504666619000" expanded="false" signature="3548:3559" ph=" { " />
-            <marker date="1504666619000" expanded="false" signature="3595:3601" ph=" }" />
-            <marker date="1504666619000" expanded="true" signature="3901:4102" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="4136:4309" ph="{...}" />
-            <marker date="1504666619000" expanded="true" signature="4227:4303" ph="{...}" />
+            <element signature="e#36922#36923#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1135,27 +1024,70 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/HtmlPageTitleAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/KQueueArrayWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <marker date="1504666619000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1504666619000" expanded="false" signature="134:295" ph="..." />
+            <marker date="1504666619000" expanded="true" signature="850:1056" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="1101:1235" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="1268:1583" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="1617:1905" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="1954:2130" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="2165:2566" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="2599:3071" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="3109:3358" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="3384:3526" ph="{...}" />
+            <marker date="1504666619000" expanded="false" signature="3548:3559" ph=" { " />
+            <marker date="1504666619000" expanded="false" signature="3595:3601" ph=" }" />
+            <marker date="1504666619000" expanded="true" signature="3901:4102" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="4136:4309" ph="{...}" />
+            <marker date="1504666619000" expanded="true" signature="4227:4303" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+          <folding>
+            <element signature="e#1271#1272#0" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/HtmlPageTitleAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#1057#1058#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding />
         </state>
       </provider>

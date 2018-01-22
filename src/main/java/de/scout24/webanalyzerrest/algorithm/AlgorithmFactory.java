@@ -14,18 +14,15 @@ public class AlgorithmFactory {
     @Autowired
     private Algorithm emptyAlgorithm;
     @Autowired
-    private Algorithm html5PageTitleAlgorithm;
+    private Algorithm htmlPageTitleAlgorithm;
 
     public List<Class> getAvailableAlgorithms(HtmlVersion version) {
-        if (HtmlVersion.HTML5.equals(version)) {
-            return Arrays.asList(HtmlPageTitleAlgorithm.class);
-        }
-        return Arrays.asList(EmptyAlgorithm.class);
+        return Arrays.asList(HtmlPageTitleAlgorithm.class);
     }
 
     public Algorithm getPageTitleAlgorithm(HtmlVersion version) {
         if (HtmlVersion.HTML5.equals(version)) {
-            return html5PageTitleAlgorithm;
+            return htmlPageTitleAlgorithm;
         }
         return emptyAlgorithm;
     }
