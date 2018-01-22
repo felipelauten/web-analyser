@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8aa63ecd-fc48-4de1-a9a7-7968e55e2df8" name="Default" comment="Fixed POM configuration adding reactor modules">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_scout24_web_analyzer_commons_0_0_1_SNAPSHOT.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/AnalysisInput.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/AnalysisItem.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/AnalysisOutput.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/enums/AnalysisStatus.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/enums/ResponseItemType.java" />
+    <list default="true" id="8aa63ecd-fc48-4de1-a9a7-7968e55e2df8" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalisysService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
@@ -28,33 +26,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UrlAnalysisServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1162#1189#0" expanded="true" />
+                <element signature="e#1258#1259#0" expanded="true" />
+                <element signature="e#1302#1303#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebAnalyzerRestApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+              <folding>
+                <element signature="e#726#727#0" expanded="true" />
+                <element signature="e#767#768#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+            <state relative-caret-position="374">
+              <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebAnalyzerRestApplicationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplicationTests.java">
+      <file leaf-file-name="ErrorController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/ErrorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="75">
+              <caret line="5" column="54" lean-forward="false" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UrlAnalisysRestRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
+                <element signature="e#904#905#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalysisController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>unit</find>
+      <find>tomcat.port</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -76,9 +142,13 @@
         <option value="$PROJECT_DIR$/bitbucket-pipelines.yml" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/ErrorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/AnalysisOutput.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalisysService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -183,6 +253,15 @@
               <item name="web-analyzer-rest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webanalyzerrest" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-analyzer-rest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-analyzer-rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -193,6 +272,9 @@
       <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="RestTemplate&#9;PSI&#9;JAVA://org.springframework.web.client.RestTemplate" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -211,7 +293,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.Build">
+  <component name="RunManager" selected="Application.Run app">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -267,7 +349,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="Build" type="MavenRunConfiguration" factoryName="Maven">
+    <configuration name="Build Local" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -280,6 +362,7 @@
               <list>
                 <option value="clean" />
                 <option value="install" />
+                <option value="-Dmaven.test.skip=true" />
               </list>
             </option>
             <option name="profilesMap">
@@ -356,7 +439,7 @@
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Run app" />
-      <item index="1" class="java.lang.String" itemvalue="Maven.Build" />
+      <item index="1" class="java.lang.String" itemvalue="Maven.Build Local" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -380,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516530058092</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed POM configuration adding reactor modules">
+      <created>1516594251815</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1516594251815</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -389,13 +479,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -434,7 +524,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java</url>
-          <line>20</line>
+          <line>21</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -444,38 +534,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -738,30 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="5" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/ErrorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/model/AnalysisInput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -824,36 +858,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalisysService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE-sources.jar!/org/springframework/web/client/RestTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/AnalysisController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1162#1189#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/controller/ErrorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="54" lean-forward="false" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding>
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+        <state relative-caret-position="374">
+          <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
           <folding />
         </state>
       </provider>

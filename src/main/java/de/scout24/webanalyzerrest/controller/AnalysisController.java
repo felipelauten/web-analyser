@@ -1,5 +1,6 @@
 package de.scout24.webanalyzerrest.controller;
 
+import de.scout24.webanalyzerrest.model.AnalysisInput;
 import de.scout24.webanalyzerrest.model.AnalysisOutput;
 import de.scout24.webanalyzerrest.model.enums.AnalysisStatus;
 import org.apache.commons.lang3.StringUtils;
@@ -16,12 +17,15 @@ public class AnalysisController {
 
     @RequestMapping(value = "/analyze", method = RequestMethod.POST)
     public @ResponseBody
-    AnalysisOutput performAnalysisByURL(@RequestBody String body) {
-        String url = body;
-        if (StringUtils.isEmpty(url)) {
+    AnalysisOutput performAnalysisByURL(@RequestBody AnalysisInput input) {
+
+        if (input == null || StringUtils.isEmpty(input.getUrl())) {
             LOG.warn("User sent empty URL");
             return new AnalysisOutput(AnalysisStatus.UNKNOWN_ERROR);
         }
+        String url = input.getUrl();
+
+
         return new AnalysisOutput(AnalysisStatus.OK);
     }
 }
