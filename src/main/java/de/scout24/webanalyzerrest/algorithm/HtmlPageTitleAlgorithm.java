@@ -11,6 +11,8 @@ import java.util.Optional;
 
 public class HtmlPageTitleAlgorithm implements Algorithm<String, ResponseItemType> {
 
+    public static final String ALGORITHM_NAME = "htmlPageTitleAlgorithm";
+
     private static final String TITLE_TAG = "title";
     private static Logger LOG = LoggerFactory.getLogger(HtmlPageTitleAlgorithm.class.getName());
 

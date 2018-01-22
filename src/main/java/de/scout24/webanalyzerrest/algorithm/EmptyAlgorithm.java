@@ -5,6 +5,8 @@ import org.jsoup.nodes.Document;
 
 public class EmptyAlgorithm implements Algorithm<Boolean, ResponseItemType> {
 
+    public static final String ALGORITHM_NAME = "emptyAlgorithm";
+
     @Override
     public Boolean execute(Document dom) {
         return true;

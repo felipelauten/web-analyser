@@ -62,7 +62,7 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
     private List<Algorithm> getAlgorithmList() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         List<Algorithm> algorithms = new ArrayList<>();
         for (Class algorithm :
-                factory.getAvailableAlgorithms(HtmlVersion.HTML5)) { // FIXME Remove hardcoded version
+                factory.getAvailableAlgorithms(HtmlVersion.HTML5)) { // FIXME Remove hardcoded HTML version
             Constructor constructor = algorithm.getConstructor(); // Gets the default constructor
             Algorithm algorithmObj = (Algorithm) constructor.newInstance();
             algorithms.add(algorithmObj);
