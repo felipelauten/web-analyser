@@ -1,7 +1,5 @@
 package de.scout24.webanalyzerrest.model;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import java.util.Objects;
 
 /**
@@ -12,6 +10,7 @@ import java.util.Objects;
 public class AnalysisItem<Type> {
 
     private Type resultType;
+    private AdditionalInformation additionalInformation;
 
     public AnalysisItem(Type result) {
         this.resultType = result;
@@ -21,21 +20,30 @@ public class AnalysisItem<Type> {
         return resultType;
     }
 
+    public void setResultType(Type resultType) {
+        this.resultType = resultType;
+    }
+
+    public AdditionalInformation getAdditionalInformation() {
+        return additionalInformation;
+    }
+
+    public void setAdditionalInformation(AdditionalInformation additionalInformation) {
+        this.additionalInformation = additionalInformation;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof AnalysisItem)) return false;
         AnalysisItem<?> that = (AnalysisItem<?>) o;
-        return Objects.equals(getResultType(), that.getResultType());
+        return Objects.equals(getResultType(), that.getResultType()) &&
+                Objects.equals(getAdditionalInformation(), that.getAdditionalInformation());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getResultType());
-    }
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+        return Objects.hash(getResultType(), getAdditionalInformation());
     }
 }

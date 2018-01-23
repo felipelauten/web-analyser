@@ -1,7 +1,7 @@
 package de.scout24.webanalyzerrest.service;
 
 import de.scout24.webanalyzerrest.algorithm.Algorithm;
-import de.scout24.webanalyzerrest.algorithm.AlgorithmFactory;
+import de.scout24.webanalyzerrest.algorithm.config.AlgorithmFactory;
 import de.scout24.webanalyzerrest.model.AnalysisInput;
 import de.scout24.webanalyzerrest.model.AnalysisItem;
 import de.scout24.webanalyzerrest.model.AnalysisOutput;
@@ -42,13 +42,16 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
         String html = htmlContents.get();
         Document dom = Jsoup.parse(html);
 
+        // Hack to make links algorithm work and not make the code dirty passing URL's around
+        dom.setBaseUri(input.getUrl());
+
         List<Algorithm> algorithms = getAlgorithmList();
         Map<ResponseItemType, AnalysisItem> resultMap = getAlgorithmResults(algorithms, dom);
 
         return new AnalysisOutput(AnalysisStatus.OK, resultMap);
     }
 
-    private Map<ResponseItemType, AnalysisItem> getAlgorithmResults(List<Algorithm> algorithms, Document dom) throws Exception {
+    private Map<ResponseItemType, AnalysisItem> getAlgorithmResults(List<Algorithm> algorithms, Document dom) {
         Map<ResponseItemType, AnalysisItem> result = new LinkedHashMap<>(); // To maintain the order of execution
 
         for (Algorithm algorithm : algorithms) {

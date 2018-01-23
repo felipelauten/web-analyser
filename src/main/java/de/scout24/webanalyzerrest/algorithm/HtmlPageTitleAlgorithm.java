@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Optional;
 
-public class HtmlPageTitleAlgorithm implements Algorithm<String, ResponseItemType> {
+public class HtmlPageTitleAlgorithm implements Algorithm<String> {
 
     public static final String ALGORITHM_NAME = "htmlPageTitleAlgorithm";
 
