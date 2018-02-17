@@ -11,6 +11,7 @@ import java.util.Optional;
 @SuppressWarnings("unused")
 public class UrlAnalisysRestRepository {
 
+    public static final String LOCATION = "Location";
     @Autowired
     private RestTemplate template;
 
@@ -21,9 +22,9 @@ public class UrlAnalisysRestRepository {
      * @return
      */
     public Optional<String> getHtmlFromUrl(String url) throws Exception {
-        ResponseEntity<String> entity = template.getForEntity(url, String.class);
-
+        ResponseEntity<String> entity;
         do {
+            entity = template.getForEntity(url, String.class);
             if (entity.getStatusCode().is4xxClientError()) {
                 throw new Exception("The requested page was not found");
             }
@@ -32,6 +33,9 @@ public class UrlAnalisysRestRepository {
             }
             if (entity.getStatusCode().is2xxSuccessful()) {
                 return Optional.of(entity.getBody());
+            }
+            if (entity.getStatusCode().is3xxRedirection()) {
+                url = entity.getHeaders().get(LOCATION).get(0);
             }
         } while (entity.getStatusCode().is3xxRedirection());
         return Optional.empty();

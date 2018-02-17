@@ -6,6 +6,6 @@ package de.scout24.webanalyzerrest.model.enums;
 @SuppressWarnings("unused")
 public enum ResponseItemType {
 
-    HTML_VERSION, PAGE_TITLE, NUMBER_OF_HEADINGS, INTERNAL_LINKS, EXTERNAL_LINKS, LOGIN_FORM
+    HTML_VERSION, PAGE_TITLE, NUMBER_OF_HEADINGS, INTERNAL_LINKS, EXTERNAL_LINKS, LOGIN_FORM, EMPTY_ALGORITHM
 
 }

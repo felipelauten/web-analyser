@@ -1,6 +1,7 @@
 package de.scout24.webanalyzerrest.algorithm;
 
 import de.scout24.webanalyzerrest.Counter;
+import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
@@ -8,10 +9,12 @@ import org.jsoup.nodes.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 @Qualifier(InternalLinksAlgorithm.ALGORITHM_NAME)
 public class InternalLinksAlgorithm extends PageLinksAbstractAlgorithm implements Algorithm<Integer> {
 
@@ -19,7 +22,7 @@ public class InternalLinksAlgorithm extends PageLinksAbstractAlgorithm implement
     private static Logger LOG = LoggerFactory.getLogger(InternalLinksAlgorithm.class);
 
     @Override
-    public Integer execute(Document dom) {
+    public Integer execute(Document dom) throws AlgoruthmException {
         List<Element> tags = dom.getElementsByTag(LINK_TAG);
         List<String> internalTagLinks = new ArrayList<>();
         Counter internalLinksCount = new Counter();
@@ -42,7 +45,7 @@ public class InternalLinksAlgorithm extends PageLinksAbstractAlgorithm implement
         if (StringUtils.isEmpty(link) || StringUtils.isEmpty(baseUrl)) {
             return false;
         }
-        if (link.startsWith(ANCHOR_LINK)) {
+        if (link.startsWith(ANCHOR_LINK) || link.startsWith(JAVASCRIPT_PREFIX)) {
             return true;
         }
         return link.contains(baseUrl) || link.startsWith(RELATIVE_LINK);

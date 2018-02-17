@@ -1,5 +1,6 @@
 package de.scout24.webanalyzerrest.algorithm;
 
+import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -25,7 +26,7 @@ public interface Algorithm<R> {
      * @return R - result
      * @throws Exception if something bad happens
      */
-    R execute(Document dom);
+    R execute(Document dom) throws AlgoruthmException;
 
     /**
      * Common operation of the algorithms, use tag name to filter the dom tree and get its content.

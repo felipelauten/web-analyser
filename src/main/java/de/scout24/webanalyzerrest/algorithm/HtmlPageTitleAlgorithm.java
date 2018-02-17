@@ -1,14 +1,19 @@
 package de.scout24.webanalyzerrest.algorithm;
 
+import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
+@Qualifier(HtmlPageTitleAlgorithm.ALGORITHM_NAME)
 public class HtmlPageTitleAlgorithm implements Algorithm<String> {
 
     public static final String ALGORITHM_NAME = "htmlPageTitleAlgorithm";
@@ -17,7 +22,7 @@ public class HtmlPageTitleAlgorithm implements Algorithm<String> {
     private static Logger LOG = LoggerFactory.getLogger(HtmlPageTitleAlgorithm.class.getName());
 
     @Override
-    public String execute(Document dom) {
+    public String execute(Document dom) throws AlgoruthmException {
         for (Element e : dom.getAllElements()) {
             Optional<String> elementText = findByTagName(e, TITLE_TAG);
             if (elementText.isPresent()) {

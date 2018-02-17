@@ -1,14 +1,21 @@
 package de.scout24.webanalyzerrest.algorithm;
 
+import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
+@Qualifier(LoginFormAlgorithm.ALGORITHM_NAME)
 public class LoginFormAlgorithm implements Algorithm<Boolean> {
 
+    public static final String ALGORITHM_NAME = "loginFormAlgorithm";
+
     @Override
-    public Boolean execute(Document dom) {
+    public Boolean execute(Document dom) throws AlgoruthmException {
         Elements formTag = dom.select("form");
         if (formTag != null) {
             boolean loginFieldOk = false;

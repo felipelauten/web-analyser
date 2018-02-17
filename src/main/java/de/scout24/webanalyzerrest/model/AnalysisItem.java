@@ -1,28 +1,52 @@
 package de.scout24.webanalyzerrest.model;
 
-import java.util.Objects;
+import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Generic object containing the analysis item
  *
  * @param <Type> of evaluated value
  */
-public class AnalysisItem<Type> {
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class AnalysisItem<Type> implements Serializable {
 
-    private Type resultType;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private AnalysisOutput output;
+
+    protected AnalysisItem() {
+        // for JPA
+    }
+
+    public AnalysisItem(AnalysisOutput output, Type algorithmResult, ResponseItemType itemType) {
+        this.output = output;
+        this.setResultType(algorithmResult);
+        this.setItemType(itemType);
+    }
     private AdditionalInformation additionalInformation;
 
-    public AnalysisItem(Type result) {
-        this.resultType = result;
+    public Long getId() {
+        return id;
     }
 
-    public Type getResultType() {
-        return resultType;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setResultType(Type resultType) {
-        this.resultType = resultType;
-    }
+    public abstract ResponseItemType getItemType();
+
+    protected abstract void setItemType(ResponseItemType itemType);
+
+    public abstract void setOutput(AnalysisOutput output);
+
+    public abstract Type getResultType();
+
+    protected abstract void setResultType(Type resultType);
 
     public AdditionalInformation getAdditionalInformation() {
         return additionalInformation;
@@ -32,18 +56,4 @@ public class AnalysisItem<Type> {
         this.additionalInformation = additionalInformation;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof AnalysisItem)) return false;
-        AnalysisItem<?> that = (AnalysisItem<?>) o;
-        return Objects.equals(getResultType(), that.getResultType()) &&
-                Objects.equals(getAdditionalInformation(), that.getAdditionalInformation());
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(getResultType(), getAdditionalInformation());
-    }
 }
