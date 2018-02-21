@@ -2,6 +2,10 @@ package de.scout24.webanalyzerrest.algorithm;
 
 import de.scout24.webanalyzerrest.Counter;
 import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
+import de.scout24.webanalyzerrest.model.AdditionalInformation;
+import de.scout24.webanalyzerrest.model.AnalysisItem;
+import de.scout24.webanalyzerrest.model.AnalysisItemInteger;
+import de.scout24.webanalyzerrest.model.enums.AdditionalInformationType;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
@@ -16,14 +20,14 @@ import java.util.List;
 
 @Component
 @Qualifier(ExternalLinksAlgorithm.ALGORITHM_NAME)
-public class ExternalLinksAlgorithm extends PageLinksAbstractAlgorithm implements Algorithm<Integer> {
+public class ExternalLinksAlgorithm extends PageLinksAbstractAlgorithm implements Algorithm {
 
     public static final String ALGORITHM_NAME = "internalLinksAlgorithm";
 
     private static Logger LOG = LoggerFactory.getLogger(ExternalLinksAlgorithm.class);
 
     @Override
-    public Integer execute(Document dom) throws AlgoruthmException {
+    public AnalysisItem execute(Document dom) throws AlgoruthmException {
         List<Element> tags = dom.getElementsByTag(LINK_TAG);
         List<String> internalTagLinks = new ArrayList<>();
         Counter internalLinksCount = new Counter();
@@ -39,7 +43,13 @@ public class ExternalLinksAlgorithm extends PageLinksAbstractAlgorithm implement
         LOG.info(String.format("Found %s external links in the page:", internalLinksCount.getCount()));
         internalTagLinks.stream().forEach(link -> LOG.info(link));
 
-        return internalLinksCount.getCount();
+        AnalysisItem<Integer> item = new AnalysisItemInteger(internalLinksCount.getCount(),
+                ResponseItemType.EXTERNAL_LINKS);
+        AdditionalInformation additionalInformation = new AdditionalInformation("Internal Links Check",
+                "additionalInfo", AdditionalInformationType.INTERNAL_LINKS_ANALYSIS);
+        item.setAdditionalInformation(additionalInformation);
+
+        return item;
     }
 
     boolean isValidLink(String link, String baseUrl) {
@@ -54,6 +64,6 @@ public class ExternalLinksAlgorithm extends PageLinksAbstractAlgorithm implement
 
     @Override
     public ResponseItemType getItemType() {
-        return ResponseItemType.INTERNAL_LINKS;
+        return ResponseItemType.EXTERNAL_LINKS;
     }
 }

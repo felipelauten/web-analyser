@@ -1,6 +1,8 @@
 package de.scout24.webanalyzerrest.algorithm;
 
 import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
+import de.scout24.webanalyzerrest.model.AnalysisItem;
+import de.scout24.webanalyzerrest.model.AnalysisItemMap;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,18 +15,20 @@ import java.util.Map;
 
 @Component
 @Qualifier(HeadingsAlgorithm.ALGORITHM_NAME)
-public class HeadingsAlgorithm implements Algorithm<Map<String, Integer>> {
+public class HeadingsAlgorithm implements Algorithm {
 
     public static final String ALGORITHM_NAME = "headingsAlgorigthm";
 
     @Override
-    public Map<String, Integer> execute(Document dom) throws AlgoruthmException {
+    public AnalysisItem execute(Document dom) throws AlgoruthmException {
         Map<String, Integer> result = new LinkedHashMap<>();    // To maintain the order
         for (String headingType : getListOfHeadings()) {
             result.put(headingType, countNumberOfItems(headingType, dom));
         }
 
-        return result;
+        AnalysisItem<Map<String, Integer>> item = new AnalysisItemMap(result, ResponseItemType.NUMBER_OF_HEADINGS);
+
+        return item;
     }
 
     List<String> getListOfHeadings() {

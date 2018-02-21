@@ -2,6 +2,10 @@ package de.scout24.webanalyzerrest.algorithm;
 
 import de.scout24.webanalyzerrest.Counter;
 import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
+import de.scout24.webanalyzerrest.model.AdditionalInformation;
+import de.scout24.webanalyzerrest.model.AnalysisItem;
+import de.scout24.webanalyzerrest.model.AnalysisItemInteger;
+import de.scout24.webanalyzerrest.model.enums.AdditionalInformationType;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
@@ -16,13 +20,13 @@ import java.util.List;
 
 @Component
 @Qualifier(InternalLinksAlgorithm.ALGORITHM_NAME)
-public class InternalLinksAlgorithm extends PageLinksAbstractAlgorithm implements Algorithm<Integer> {
+public class InternalLinksAlgorithm extends PageLinksAbstractAlgorithm implements Algorithm {
 
     public static final String ALGORITHM_NAME = "internalLinksAlgorithm";
     private static Logger LOG = LoggerFactory.getLogger(InternalLinksAlgorithm.class);
 
     @Override
-    public Integer execute(Document dom) throws AlgoruthmException {
+    public AnalysisItem execute(Document dom) throws AlgoruthmException {
         List<Element> tags = dom.getElementsByTag(LINK_TAG);
         List<String> internalTagLinks = new ArrayList<>();
         Counter internalLinksCount = new Counter();
@@ -38,7 +42,12 @@ public class InternalLinksAlgorithm extends PageLinksAbstractAlgorithm implement
         LOG.info(String.format("Found %s external links in the page:", internalLinksCount.getCount()));
         internalTagLinks.stream().forEach(link -> LOG.info(link));
 
-        return internalLinksCount.getCount();
+        AnalysisItemInteger itemInteger = new AnalysisItemInteger(internalLinksCount.getCount(),
+                ResponseItemType.INTERNAL_LINKS);
+        AdditionalInformation additionalInformation = new AdditionalInformation("Internal Links Check",
+                "additionalInfo", AdditionalInformationType.INTERNAL_LINKS_ANALYSIS);
+        itemInteger.setAdditionalInformation(additionalInformation);
+        return itemInteger;
     }
 
     boolean isValidLink(String link, String baseUrl) {

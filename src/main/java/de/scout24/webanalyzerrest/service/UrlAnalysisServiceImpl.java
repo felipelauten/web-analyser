@@ -4,7 +4,6 @@ import de.scout24.webanalyzerrest.algorithm.Algorithm;
 import de.scout24.webanalyzerrest.algorithm.config.AlgorithmFactory;
 import de.scout24.webanalyzerrest.model.AnalysisInput;
 import de.scout24.webanalyzerrest.model.AnalysisItem;
-import de.scout24.webanalyzerrest.model.AnalysisItemFactory;
 import de.scout24.webanalyzerrest.model.AnalysisOutput;
 import de.scout24.webanalyzerrest.model.enums.AnalysisStatus;
 import de.scout24.webanalyzerrest.model.enums.HtmlVersion;
@@ -72,10 +71,7 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
         Map<ResponseItemType, AnalysisItem> result = new LinkedHashMap<>(); // To maintain the order of execution
 
         for (Algorithm algorithm : algorithms) {
-            Object algorithmResult = algorithm.execute(dom);
-            ResponseItemType itemType = algorithm.getItemType();
-            AnalysisItem item = AnalysisItemFactory.getAnalysisType(algorithmResult, itemType);
-            result.put(itemType, item);
+            result.put(algorithm.getItemType(), algorithm.execute(dom));
         }
 
         return result;
