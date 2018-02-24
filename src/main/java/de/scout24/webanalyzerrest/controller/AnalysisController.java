@@ -47,7 +47,8 @@ public class AnalysisController {
     }
 
     public @ResponseBody
-    String performURLAnalysisCheck(@RequestBody String ur) {
+    @RequestMapping(value = "/url-check")
+    String performURLAnalysisCheck(@RequestParam String url, @RequestParam String analysisId) {
         return "OK!";
     }
 
