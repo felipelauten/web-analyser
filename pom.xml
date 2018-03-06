@@ -11,11 +11,13 @@
     <name>web-analyzer-rest</name>
 	<description>Demo project for Spring Boot</description>
 
+    <!-- FIX BUILD
     <parent>
         <groupId>de.scout24</groupId>
         <artifactId>web-analyzer</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    -->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
