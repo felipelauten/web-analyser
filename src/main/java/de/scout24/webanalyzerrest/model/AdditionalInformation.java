@@ -2,14 +2,24 @@ package de.scout24.webanalyzerrest.model;
 
 import de.scout24.webanalyzerrest.model.enums.AdditionalInformationType;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "ADDITIONAL_INFORMATION")
 public class AdditionalInformation implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String comment;
     private String url;
     private AdditionalInformationType type;
+
+    protected AdditionalInformation() {
+        // for JPA
+    }
 
     public AdditionalInformation(String comment, String url, AdditionalInformationType type) {
         this.comment = comment;
@@ -20,6 +30,14 @@ public class AdditionalInformation implements Serializable {
     public AdditionalInformation(String url, AdditionalInformationType type) {
         this.url = url;
         this.type = type;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getComment() {

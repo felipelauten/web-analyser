@@ -2,14 +2,14 @@ package de.scout24.webanalyzerrest.service;
 
 import de.scout24.webanalyzerrest.algorithm.Algorithm;
 import de.scout24.webanalyzerrest.algorithm.config.AlgorithmFactory;
+import de.scout24.webanalyzerrest.model.AdditionalInformation;
 import de.scout24.webanalyzerrest.model.AnalysisInput;
 import de.scout24.webanalyzerrest.model.AnalysisItem;
 import de.scout24.webanalyzerrest.model.AnalysisOutput;
 import de.scout24.webanalyzerrest.model.enums.AnalysisStatus;
 import de.scout24.webanalyzerrest.model.enums.HtmlVersion;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
-import de.scout24.webanalyzerrest.repository.AnalysisOutputMemoryRepository;
-import de.scout24.webanalyzerrest.repository.UrlAnalisysRestRepository;
+import de.scout24.webanalyzerrest.repository.*;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class UrlAnalysisServiceImpl implements UrlAnalisysService {
@@ -31,8 +32,13 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
     private AlgorithmFactory factory;
 
     @Autowired
-    @Qualifier("analysisOutputMemoryRepository")
-    private AnalysisOutputMemoryRepository analysisOutputRepository;
+    private AnalysisItemDbRepository itemRepository;
+
+    @Autowired
+    private AnalysisOutputRepository outputRepository;
+
+    @Autowired
+    private AdditionalInformationDbRepository additionalInformationRepository;
 
     @Override
     public Map<ResponseItemType, AnalysisItem> analyseRemoteUrl(AnalysisInput input, String ip) throws Exception {
@@ -55,9 +61,44 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
         Map<ResponseItemType, AnalysisItem> resultMap = getAlgorithmResults(algorithms, dom);
 
         AnalysisOutput analysisOutput = new AnalysisOutput(AnalysisStatus.OK, resultMap);
-        analysisOutputRepository.save(analysisOutput, ip);
+
+        // Saves all additional information (if present)
+        List<AdditionalInformation> informationList = resultMap.values().stream()
+                .filter(item -> item.isAdditionalInformationPresent())
+                .map(AnalysisItem::getAdditionalInformation)
+                .collect(Collectors.toList());
+        additionalInformationRepository.save(informationList);
+
+        // Save all the items and output result
+        itemRepository.save(resultMap.values());
+        outputRepository.save(analysisOutput);
 
         return analysisOutput.getItemsByAnalysisItem();
+    }
+
+    @Override
+    public Map<String, AnalysisStatus> linkHealthCheck(Long analysisId) {
+        if (analysisId == null || new Long(0).equals(analysisId)) {
+            throw new RuntimeException("Provide the analysis ID");
+        }
+        Map<String, AnalysisStatus> map = new HashMap<>();
+        AnalysisOutput output = outputRepository.findOne(analysisId);
+        if (output == null) {
+            return Collections.emptyMap();
+        }
+
+        for (AnalysisItem item: output.getItemsByAnalysisItem().values()) {
+            if (ResponseItemType.EXTERNAL_LINKS.equals(item.getItemType())) {
+                String url = (String) item.getResultType();
+                if (repository.checkUrlConnectivity((String) item.getResultType())) {
+                    map.put(url, AnalysisStatus.OK);
+                } else {
+                    map.put(url, AnalysisStatus.UNKNOWN_ERROR);
+                }
+            }
+        }
+
+        return map;
     }
 
     /**

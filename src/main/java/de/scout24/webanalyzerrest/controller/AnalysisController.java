@@ -2,6 +2,7 @@ package de.scout24.webanalyzerrest.controller;
 
 import de.scout24.webanalyzerrest.model.AnalysisInput;
 import de.scout24.webanalyzerrest.model.AnalysisItem;
+import de.scout24.webanalyzerrest.model.enums.AnalysisStatus;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import de.scout24.webanalyzerrest.service.UrlAnalisysService;
 import org.apache.commons.lang3.StringUtils;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,8 +50,12 @@ public class AnalysisController {
 
     public @ResponseBody
     @RequestMapping(value = "/url-check")
-    String performURLAnalysisCheck(@RequestParam String url, @RequestParam String analysisId) {
-        return "OK!";
+    Map<String, AnalysisStatus> performURLAnalysisCheck(@RequestParam String url, @RequestParam Long analysisId) throws Exception {
+        if (StringUtils.isEmpty(url) || new Long(0).equals(analysisId)) {
+            return Collections.emptyMap();
+        }
+
+        return service.linkHealthCheck(analysisId);
     }
 
     public void setService(UrlAnalisysService service) {

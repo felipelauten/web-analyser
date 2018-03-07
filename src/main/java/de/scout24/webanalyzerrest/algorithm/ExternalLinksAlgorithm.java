@@ -1,6 +1,6 @@
 package de.scout24.webanalyzerrest.algorithm;
 
-import de.scout24.webanalyzerrest.Counter;
+import de.scout24.webanalyzerrest.util.Counter;
 import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
 import de.scout24.webanalyzerrest.model.AdditionalInformation;
 import de.scout24.webanalyzerrest.model.AnalysisItem;

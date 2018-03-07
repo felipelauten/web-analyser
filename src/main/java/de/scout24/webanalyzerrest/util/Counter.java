@@ -1,4 +1,4 @@
-package de.scout24.webanalyzerrest;
+package de.scout24.webanalyzerrest.util;
 
 /**
  * Utility class to count thing;

@@ -1,6 +1,6 @@
 package de.scout24.webanalyzerrest.repository;
 
-import de.scout24.webanalyzerrest.Counter;
+import de.scout24.webanalyzerrest.util.Counter;
 import de.scout24.webanalyzerrest.model.AnalysisOutput;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;

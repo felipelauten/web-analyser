@@ -10,4 +10,5 @@ public class RepositoryConfig {
     public AnalysisOutputMemoryRepository memoryRepository() {
         return new AnalysisOutputMemoryRepository();
     }
+
 }

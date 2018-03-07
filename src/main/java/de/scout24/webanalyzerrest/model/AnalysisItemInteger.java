@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.hibernate.annotations.Target;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @JsonAutoDetect
@@ -18,6 +15,7 @@ public class AnalysisItemInteger extends AnalysisItem<Integer> {
     @ManyToOne
     private AnalysisOutput output;
     @Target(value = Integer.class)
+    @Column(name = "resultTypeInteger")
     private Integer resultType;
 
     public AnalysisItemInteger(Integer result, ResponseItemType itemType) {

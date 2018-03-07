@@ -18,6 +18,8 @@ public abstract class AnalysisItem<Type> implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private AnalysisOutput output;
+    @OneToOne(fetch = FetchType.LAZY , cascade = { CascadeType.REMOVE })
+    private AdditionalInformation additionalInformation;
 
     protected AnalysisItem() {
         // for JPA
@@ -28,7 +30,6 @@ public abstract class AnalysisItem<Type> implements Serializable {
         this.setResultType(algorithmResult);
         this.setItemType(itemType);
     }
-    private AdditionalInformation additionalInformation;
 
     public Long getId() {
         return id;
@@ -47,6 +48,8 @@ public abstract class AnalysisItem<Type> implements Serializable {
     public abstract Type getResultType();
 
     protected abstract void setResultType(Type resultType);
+
+    public boolean isAdditionalInformationPresent() { return additionalInformation != null; }
 
     public AdditionalInformation getAdditionalInformation() {
         return additionalInformation;
