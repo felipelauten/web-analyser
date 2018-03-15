@@ -48,10 +48,11 @@ public class AnalysisController {
         }
     }
 
+    @RequestMapping(value = "/url-check/{id}", method = RequestMethod.POST)
     public @ResponseBody
-    @RequestMapping(value = "/url-check")
-    Map<String, AnalysisStatus> performURLAnalysisCheck(@RequestParam String url, @RequestParam Long analysisId) throws Exception {
-        if (StringUtils.isEmpty(url) || new Long(0).equals(analysisId)) {
+    Map<String, AnalysisStatus> performURLAnalysisCheck(@PathVariable(value = "id") Long analysisId)
+            throws Exception {
+        if (new Long(0).equals(analysisId)) {
             return Collections.emptyMap();
         }
 
