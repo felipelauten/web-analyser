@@ -28,7 +28,7 @@ public class AnalysisOutput implements Serializable {
     @Enumerated(value = EnumType.ORDINAL)
     private AnalysisStatus status;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "output")
     private List<AnalysisItem> analysisItems;
 
     @Transient

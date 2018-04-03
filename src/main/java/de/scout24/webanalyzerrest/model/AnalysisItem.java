@@ -17,7 +17,11 @@ public abstract class AnalysisItem<Type> implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "output")
     private AnalysisOutput output;
+
     @OneToOne(fetch = FetchType.LAZY , cascade = { CascadeType.REMOVE })
     private AdditionalInformation additionalInformation;
 

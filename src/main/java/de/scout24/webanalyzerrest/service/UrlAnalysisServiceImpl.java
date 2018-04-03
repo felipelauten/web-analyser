@@ -2,10 +2,7 @@ package de.scout24.webanalyzerrest.service;
 
 import de.scout24.webanalyzerrest.algorithm.Algorithm;
 import de.scout24.webanalyzerrest.algorithm.config.AlgorithmFactory;
-import de.scout24.webanalyzerrest.model.AdditionalInformation;
-import de.scout24.webanalyzerrest.model.AnalysisInput;
-import de.scout24.webanalyzerrest.model.AnalysisItem;
-import de.scout24.webanalyzerrest.model.AnalysisOutput;
+import de.scout24.webanalyzerrest.model.*;
 import de.scout24.webanalyzerrest.model.enums.AnalysisStatus;
 import de.scout24.webanalyzerrest.model.enums.HtmlVersion;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
@@ -16,6 +13,7 @@ import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -41,6 +39,7 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
     private AdditionalInformationDbRepository additionalInformationRepository;
 
     @Override
+    @Transactional
     public Map<ResponseItemType, AnalysisItem> analyseRemoteUrl(AnalysisInput input, String ip) throws Exception {
         if (input == null || StringUtils.isEmpty(input.getUrl())) {
             throw new Exception("Invalid input object");
@@ -61,6 +60,7 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
         Map<ResponseItemType, AnalysisItem> resultMap = getAlgorithmResults(algorithms, dom);
 
         AnalysisOutput analysisOutput = new AnalysisOutput(AnalysisStatus.OK, resultMap);
+        outputRepository.save(analysisOutput);
 
         // Saves all additional information (if present)
         List<AdditionalInformation> informationList = resultMap.values().stream()
@@ -69,9 +69,11 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
                 .collect(Collectors.toList());
         additionalInformationRepository.save(informationList);
 
+        // Update the items with the current output
+        resultMap.values().forEach(item -> item.setOutput(analysisOutput));
+
         // Save all the items and output result
         itemRepository.save(resultMap.values());
-        outputRepository.save(analysisOutput);
 
         return analysisOutput.getItemsByAnalysisItem();
     }
@@ -87,13 +89,15 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
             return Collections.emptyMap();
         }
 
-        for (AnalysisItem item: output.getItemsByAnalysisItem().values()) {
-            if (ResponseItemType.EXTERNAL_LINKS.equals(item.getItemType())) {
-                String url = (String) item.getResultType();
-                if (repository.checkUrlConnectivity((String) item.getResultType())) {
-                    map.put(url, AnalysisStatus.OK);
-                } else {
-                    map.put(url, AnalysisStatus.UNKNOWN_ERROR);
+        for (AnalysisItem item: output.getAnalysisItems()) {
+            if (ResponseItemType.ALL_LINKS_MAP.equals(item.getItemType())) {
+                Map<String, Integer> linkMap = (Map<String, Integer>) item.getResultType();
+                for (String link: linkMap.keySet()) {
+                    if (repository.checkUrlConnectivity(link)) {
+                        map.put(link, AnalysisStatus.OK);
+                    } else {
+                        map.put(link, AnalysisStatus.UNKNOWN_ERROR);
+                    }
                 }
             }
         }

@@ -32,6 +32,10 @@ public class AlgorithmFactory {
     @Qualifier(LoginFormAlgorithm.ALGORITHM_NAME)
     private Algorithm loginFormAlgorithm;
 
+    @Autowired
+    @Qualifier(AllLinksAlgorithm.ALGORITHM_NAME)
+    private Algorithm allLinksAlgorithm;
+
     /**
      * Previous mechanism to get the algorithm list.
      * Returns class refereces to instantiate via reflection
@@ -47,7 +51,7 @@ public class AlgorithmFactory {
 
     public List<Algorithm> getAvailableAlgorithm() {
         return Arrays.asList(htmlPageTitleAlgorithm, internalLinksAlgorithm, externalLinksAlgorithm,
-                headingsLinksAlgorithm, loginFormAlgorithm);
+                allLinksAlgorithm, headingsLinksAlgorithm, loginFormAlgorithm);
     }
 
 }

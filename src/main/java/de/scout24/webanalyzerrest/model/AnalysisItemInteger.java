@@ -18,6 +18,10 @@ public class AnalysisItemInteger extends AnalysisItem<Integer> {
     @Column(name = "resultTypeInteger")
     private Integer resultType;
 
+    protected AnalysisItemInteger() {
+        // for JPA
+    }
+
     public AnalysisItemInteger(Integer result, ResponseItemType itemType) {
         this.setResultType(result);
         this.setItemType(itemType);

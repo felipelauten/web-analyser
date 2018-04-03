@@ -20,6 +20,10 @@ public class AnalysisItemString extends AnalysisItem<String> {
     @ManyToOne
     private AnalysisOutput output;
 
+    protected AnalysisItemString() {
+        // for JPA
+    }
+
     public AnalysisItemString(String result, ResponseItemType itemType) {
         this.setResultType(result);
         this.setItemType(itemType);

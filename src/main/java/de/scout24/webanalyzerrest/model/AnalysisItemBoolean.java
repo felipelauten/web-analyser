@@ -20,6 +20,10 @@ public class AnalysisItemBoolean extends AnalysisItem<Boolean> {
     @ManyToOne
     private AnalysisOutput output;
 
+    protected AnalysisItemBoolean() {
+        // for JPA
+    }
+
     public AnalysisItemBoolean(Boolean result, ResponseItemType itemType) {
         this.setResultType(result);
         this.setItemType(itemType);
