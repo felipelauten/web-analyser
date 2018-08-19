@@ -10,7 +10,14 @@ image: maven:3.3.9
 pipelines:
   default:
     - step:
+        name: Verify build
         caches:
           - maven
         script:
-          - mvn -B verify -P0.0.1-SNAPSHOT
+          - mvn -B verify
+    - step:
+            name: Deploy to Heroku
+            deployment: test   # set to test, staging or production
+            script:
+              - git push https://2d3340b8-ad98-4007-b74e-788a61a7f4c2@git.heroku.com/felipelauten-web-analyzer.git HEAD
+
