@@ -1,35 +1,60 @@
 package de.scout24.webanalyzerrest.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import de.scout24.webanalyzerrest.model.enums.AnalysisStatus;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Provides the Output of the analysis.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name = "ANALYSIS_OUTPUT")
 @SuppressWarnings("unused")
 public class AnalysisOutput implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Enumerated(value = EnumType.ORDINAL)
     private AnalysisStatus status;
-    private Map<ResponseItemType, AnalysisItem> itemsByAnalisysItem;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "output")
+    private List<AnalysisItem> analysisItems;
+
+    @Transient
+    private Map<ResponseItemType, AnalysisItem> itemsByAnalysisItem;
 
     public AnalysisOutput() {
-        // For Jackson XML
+        // For JPA
+
     }
 
     public AnalysisOutput(AnalysisStatus status) {
         this.status = status;
     }
 
-    public AnalysisOutput(AnalysisStatus status, Map<ResponseItemType, AnalysisItem> itemsByAnalisysItem) {
+    public AnalysisOutput(AnalysisStatus status, Map<ResponseItemType, AnalysisItem> itemsByAnalysisItem) {
         this.status = status;
-        this.itemsByAnalisysItem = itemsByAnalisysItem;
+        this.itemsByAnalysisItem = itemsByAnalysisItem;
+        buildList();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public AnalysisStatus getStatus() {
@@ -40,12 +65,35 @@ public class AnalysisOutput implements Serializable {
         this.status = status;
     }
 
-    public Map<ResponseItemType, AnalysisItem> getItemsByAnalisysItem() {
-        return itemsByAnalisysItem;
+    public List<AnalysisItem> getAnalysisItems() {
+        return analysisItems;
     }
 
-    public void setItemsByAnalisysItem(Map<ResponseItemType, AnalysisItem> itemsByAnalisysItem) {
-        this.itemsByAnalisysItem = itemsByAnalisysItem;
+    public void setAnalysisItems(List<AnalysisItem> analysisItems) {
+        this.analysisItems = analysisItems;
+    }
+
+    public Map<ResponseItemType, AnalysisItem> getItemsByAnalysisItem() {
+        return itemsByAnalysisItem;
+    }
+
+    public void setItemsByAnalysisItem(Map<ResponseItemType, AnalysisItem> itemsByAnalysisItem) {
+        this.itemsByAnalysisItem = itemsByAnalysisItem;
+    }
+
+    private void buildMap() {
+        if (this.itemsByAnalysisItem != null && CollectionUtils.isNotEmpty(this.analysisItems)) {
+            itemsByAnalysisItem = analysisItems.stream().collect(Collectors.toMap(v -> v.getItemType(), v -> v));
+        }
+    }
+
+    private void buildList() {
+        if (MapUtils.isNotEmpty(itemsByAnalysisItem)) {
+            this.analysisItems =
+                    itemsByAnalysisItem.keySet().stream()
+                            .map(key -> itemsByAnalysisItem.get(key))
+                            .collect(Collectors.toList());
+        }
     }
 
     @Override
@@ -54,13 +102,13 @@ public class AnalysisOutput implements Serializable {
         if (!(o instanceof AnalysisOutput)) return false;
         AnalysisOutput that = (AnalysisOutput) o;
         return getStatus() == that.getStatus() &&
-                Objects.equals(getItemsByAnalisysItem(), that.getItemsByAnalisysItem());
+                Objects.equals(getItemsByAnalysisItem(), that.getItemsByAnalysisItem());
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(getStatus(), getItemsByAnalisysItem());
+        return Objects.hash(getStatus(), getItemsByAnalysisItem());
     }
 
     @Override

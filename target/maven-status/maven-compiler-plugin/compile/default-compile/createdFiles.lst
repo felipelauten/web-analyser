@@ -1,0 +1,17 @@
+de/scout24/webanalyzerrest/WebAnalyzerRestApplication.class
+de/scout24/webanalyzerrest/model/enums/ResponseItemType.class
+de/scout24/webanalyzerrest/model/enums/AnalysisStatus.class
+de/scout24/webanalyzerrest/algorithm/AlgorithmConfiguration.class
+de/scout24/webanalyzerrest/model/AnalysisItem.class
+de/scout24/webanalyzerrest/model/enums/HtmlVersion.class
+de/scout24/webanalyzerrest/algorithm/EmptyAlgorithm.class
+de/scout24/webanalyzerrest/controller/ErrorController.class
+de/scout24/webanalyzerrest/algorithm/Algorithm.class
+de/scout24/webanalyzerrest/controller/AnalysisController.class
+de/scout24/webanalyzerrest/repository/UrlAnalisysRestRepository.class
+de/scout24/webanalyzerrest/algorithm/AlgorithmFactory.class
+de/scout24/webanalyzerrest/algorithm/HtmlPageTitleAlgorithm.class
+de/scout24/webanalyzerrest/service/UrlAnalisysService.class
+de/scout24/webanalyzerrest/model/AnalysisOutput.class
+de/scout24/webanalyzerrest/model/AnalysisInput.class
+de/scout24/webanalyzerrest/service/UrlAnalysisServiceImpl.class

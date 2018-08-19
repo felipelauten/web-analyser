@@ -1,5 +1,7 @@
 package de.scout24.webanalyzerrest.algorithm;
 
+import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
+import de.scout24.webanalyzerrest.model.AnalysisItem;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -11,13 +13,11 @@ import java.util.Optional;
 /**
  * Definition of algorithm used to analyse the HTML page
  *
- * @param <R> - Type of return of the algorithm
- * @param <I> - ResponseItemType
  * @see de.scout24.webanalyzerrest.model.enums.HtmlVersion (R)
  * @see de.scout24.webanalyzerrest.model.enums.ResponseItemType (I)
  * @see Document
  */
-public interface Algorithm<R, I> {
+public interface Algorithm {
 
     /**
      * Performs the analysis of the algorithm.
@@ -26,7 +26,7 @@ public interface Algorithm<R, I> {
      * @return R - result
      * @throws Exception if something bad happens
      */
-    R execute(Document dom) throws Exception;
+    AnalysisItem execute(Document dom) throws AlgoruthmException;
 
     /**
      * Common operation of the algorithms, use tag name to filter the dom tree and get its content.
