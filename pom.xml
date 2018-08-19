@@ -41,11 +41,11 @@
     </profiles>
 
 	<dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>de.scout24</groupId>
             <artifactId>web-analyzer-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
 
         <!-- Jackson -->
         <dependency>
