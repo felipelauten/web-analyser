@@ -13,10 +13,10 @@ public class WebAnalyzerRestApplication {
 		SpringApplication.run(WebAnalyzerRestApplication.class, args);
 	}
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
+//    @Bean
+//    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+//        return new PropertySourcesPlaceholderConfigurer();
+//    }
 
     @Bean
     public RestTemplate restTemplate() {

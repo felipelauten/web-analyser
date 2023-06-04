@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Ignoring .idea directory">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Heroku Procfile updated">
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/WebAnalyzerRestApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,7 +317,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685877010273</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Heroku Procfile">
+      <created>1685880316988</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685880316988</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Heroku Procfile updated">
+      <created>1685880481904</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685880481904</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -359,7 +372,9 @@
     <MESSAGE value="gitignore update" />
     <MESSAGE value="Fix project &#10;&#10;- Fix broken generics&#10;- Fix connection to my-sql&#10;- removing ignored files from repo" />
     <MESSAGE value="Ignoring .idea directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ignoring .idea directory" />
+    <MESSAGE value="Heroku Procfile" />
+    <MESSAGE value="Heroku Procfile updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Heroku Procfile updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
