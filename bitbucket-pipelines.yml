@@ -15,9 +15,15 @@ pipelines:
           - maven
         script:
           - mvn -B verify
+#    - step:
+#            name: Deploy to Heroku
+#            deployment: test   # set to test, staging or production
+#            script:
+#              - git push https://2d3340b8-ad98-4007-b74e-788a61a7f4c2@git.heroku.com/felipelauten-web-analyzer.git HEAD
     - step:
-            name: Deploy to Heroku
-            deployment: test   # set to test, staging or production
-            script:
-              - git push https://2d3340b8-ad98-4007-b74e-788a61a7f4c2@git.heroku.com/felipelauten-web-analyzer.git HEAD
+         name: Build App (with tests)
+         caches:
+           - maven
+         script:
+           - mvn -B clean install
 
