@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,14 +22,13 @@ import java.util.Map;
 @SuppressWarnings("unused")
 public class AnalysisController {
 
-    private static Logger LOG = LoggerFactory.getLogger(AnalysisController.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(AnalysisController.class.getName());
 
     @Autowired
     UrlAnalisysService service;
 
-    @RequestMapping(value = "/analyze", method = RequestMethod.POST)
-    public @ResponseBody
-    Map<ResponseItemType, AnalysisItem> performAnalysisByURL(@RequestBody AnalysisInput input, HttpServletRequest request) {
+    @RequestMapping(value = "/analyze", method = RequestMethod.POST, consumes = {"application/json"})
+    public Map<ResponseItemType, AnalysisItem<?>> performAnalysisByURL(@RequestBody AnalysisInput input, HttpServletRequest request) {
 
         if (input == null || StringUtils.isEmpty(input.getUrl())) {
             LOG.warn("User sent empty URL");
@@ -48,9 +48,9 @@ public class AnalysisController {
         }
     }
 
-    @RequestMapping(value = "/url-check/{id}", method = RequestMethod.POST)
-    public @ResponseBody
-    Map<String, AnalysisStatus> performURLAnalysisCheck(@PathVariable(value = "id") Long analysisId)
+    @RequestMapping(value = "/url-check/{id}", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public Map<String, AnalysisStatus> performURLAnalysisCheck(@PathVariable(value = "id") Long analysisId)
             throws Exception {
         if (new Long(0).equals(analysisId)) {
             return Collections.emptyMap();

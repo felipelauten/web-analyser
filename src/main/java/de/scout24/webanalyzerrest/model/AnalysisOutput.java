@@ -29,10 +29,10 @@ public class AnalysisOutput implements Serializable {
     private AnalysisStatus status;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "output")
-    private List<AnalysisItem> analysisItems;
+    private List<AnalysisItem<?>> analysisItems;
 
     @Transient
-    private Map<ResponseItemType, AnalysisItem> itemsByAnalysisItem;
+    private Map<ResponseItemType, AnalysisItem<?>> itemsByAnalysisItem;
 
     public AnalysisOutput() {
         // For JPA
@@ -43,7 +43,7 @@ public class AnalysisOutput implements Serializable {
         this.status = status;
     }
 
-    public AnalysisOutput(AnalysisStatus status, Map<ResponseItemType, AnalysisItem> itemsByAnalysisItem) {
+    public AnalysisOutput(AnalysisStatus status, Map<ResponseItemType, AnalysisItem<?>> itemsByAnalysisItem) {
         this.status = status;
         this.itemsByAnalysisItem = itemsByAnalysisItem;
         buildList();
@@ -65,25 +65,25 @@ public class AnalysisOutput implements Serializable {
         this.status = status;
     }
 
-    public List<AnalysisItem> getAnalysisItems() {
+    public List<AnalysisItem<?>> getAnalysisItems() {
         return analysisItems;
     }
 
-    public void setAnalysisItems(List<AnalysisItem> analysisItems) {
+    public void setAnalysisItems(List<AnalysisItem<?>> analysisItems) {
         this.analysisItems = analysisItems;
     }
 
-    public Map<ResponseItemType, AnalysisItem> getItemsByAnalysisItem() {
+    public Map<ResponseItemType, AnalysisItem<?>> getItemsByAnalysisItem() {
         return itemsByAnalysisItem;
     }
 
-    public void setItemsByAnalysisItem(Map<ResponseItemType, AnalysisItem> itemsByAnalysisItem) {
+    public void setItemsByAnalysisItem(Map<ResponseItemType, AnalysisItem<?>> itemsByAnalysisItem) {
         this.itemsByAnalysisItem = itemsByAnalysisItem;
     }
 
     private void buildMap() {
         if (this.itemsByAnalysisItem != null && CollectionUtils.isNotEmpty(this.analysisItems)) {
-            itemsByAnalysisItem = analysisItems.stream().collect(Collectors.toMap(v -> v.getItemType(), v -> v));
+            itemsByAnalysisItem = analysisItems.stream().collect(Collectors.toMap(AnalysisItem::getItemType, v -> v));
         }
     }
 

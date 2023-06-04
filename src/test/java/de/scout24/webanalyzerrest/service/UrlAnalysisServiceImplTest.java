@@ -11,6 +11,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Collections;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.junit.Assert.*;
 
@@ -44,7 +45,7 @@ public class UrlAnalysisServiceImplTest {
     @Test
     public void linkHealthCheckShouldReturnEmptyMapForNoOutput() throws Exception {
         // given
-        Mockito.when(outputRepository.findOne(Mockito.anyLong())).thenReturn(null);
+        Mockito.when(outputRepository.findById(Mockito.anyLong())).thenReturn(Optional.empty());
 
         // when
         Map<String, AnalysisStatus> map = service.linkHealthCheck(1L);

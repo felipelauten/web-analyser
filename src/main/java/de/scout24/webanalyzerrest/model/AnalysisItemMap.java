@@ -11,16 +11,14 @@ import java.util.Map;
 @Entity
 public class AnalysisItemMap extends AnalysisItem<Map<String, Integer>> {
 
-    @Id
-    private Long id;
     @Enumerated(value = EnumType.ORDINAL)
     private ResponseItemType itemType;
     @Target(Map.class)
     @ElementCollection(fetch = FetchType.EAGER)
-    @JoinTable(name = "analysis_item_map", joinColumns = @JoinColumn(name = "result_type_id", nullable = false))
-    @MapKeyColumn(name = "link", length = 5000, nullable = false)
-    @MapKeyClass(String.class)
-    @BatchSize(size = 100)
+//    @JoinTable(name = "analysis_item_map", joinColumns = @JoinColumn(name = "result_type_id", nullable = false))
+//    @MapKeyColumn(name = "link", length = 5000, nullable = false)
+//    @MapKeyClass(String.class)
+//    @BatchSize(size = 100)
     @Fetch(FetchMode.SELECT)
     private Map<String, Integer> resultType;
     @ManyToOne

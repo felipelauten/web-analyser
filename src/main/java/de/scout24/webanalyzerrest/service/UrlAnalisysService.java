@@ -9,7 +9,7 @@ import java.util.Map;
 
 public interface UrlAnalisysService {
 
-    Map<ResponseItemType, AnalysisItem> analyseRemoteUrl(AnalysisInput input, String ip) throws Exception;
+    Map<ResponseItemType, AnalysisItem<?>> analyseRemoteUrl(AnalysisInput input, String ip) throws Exception;
 
     Map<String, AnalysisStatus> linkHealthCheck(Long analysisId) throws Exception;
 }

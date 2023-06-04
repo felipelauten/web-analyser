@@ -11,7 +11,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,7 +39,7 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
 
     @Override
     @Transactional
-    public Map<ResponseItemType, AnalysisItem> analyseRemoteUrl(AnalysisInput input, String ip) throws Exception {
+    public Map<ResponseItemType, AnalysisItem<?>> analyseRemoteUrl(AnalysisInput input, String ip) throws Exception {
         if (input == null || StringUtils.isEmpty(input.getUrl())) {
             throw new Exception("Invalid input object");
         }
@@ -57,23 +56,23 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
         dom.setBaseUri(input.getUrl());
 
         List<Algorithm> algorithms = factory.getAvailableAlgorithm();
-        Map<ResponseItemType, AnalysisItem> resultMap = getAlgorithmResults(algorithms, dom);
+        Map<ResponseItemType, AnalysisItem<?>> resultMap = getAlgorithmResults(algorithms, dom);
 
         AnalysisOutput analysisOutput = new AnalysisOutput(AnalysisStatus.OK, resultMap);
         outputRepository.save(analysisOutput);
 
         // Saves all additional information (if present)
         List<AdditionalInformation> informationList = resultMap.values().stream()
-                .filter(item -> item.isAdditionalInformationPresent())
+                .filter(AnalysisItem::isAdditionalInformationPresent)
                 .map(AnalysisItem::getAdditionalInformation)
                 .collect(Collectors.toList());
-        additionalInformationRepository.save(informationList);
+        additionalInformationRepository.saveAll(informationList);
 
         // Update the items with the current output
         resultMap.values().forEach(item -> item.setOutput(analysisOutput));
 
         // Save all the items and output result
-        itemRepository.save(resultMap.values());
+        itemRepository.saveAll(resultMap.values());
 
         return analysisOutput.getItemsByAnalysisItem();
     }
@@ -84,14 +83,15 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
             throw new RuntimeException("Provide the analysis ID");
         }
         Map<String, AnalysisStatus> map = new HashMap<>();
-        AnalysisOutput output = outputRepository.findOne(analysisId);
-        if (output == null) {
+        Optional<AnalysisOutput> output = outputRepository.findById(analysisId);
+        if (!output.isPresent()) {
             return Collections.emptyMap();
         }
 
-        for (AnalysisItem item: output.getAnalysisItems()) {
+        for (AnalysisItem<?> item: output.get().getAnalysisItems()) {
             if (ResponseItemType.ALL_LINKS_MAP.equals(item.getItemType())) {
-                Map<String, Integer> linkMap = (Map<String, Integer>) item.getResultType();
+                AnalysisItemMap itemMap = (AnalysisItemMap) item;
+                Map<String, Integer> linkMap =  itemMap.getResultType();
                 for (String link: linkMap.keySet()) {
                     if (repository.checkUrlConnectivity(link)) {
                         map.put(link, AnalysisStatus.OK);
@@ -112,8 +112,8 @@ public class UrlAnalysisServiceImpl implements UrlAnalisysService {
      * @param dom        - HTML dom tree
      * @return map
      */
-    private Map<ResponseItemType, AnalysisItem> getAlgorithmResults(List<Algorithm> algorithms, Document dom) {
-        Map<ResponseItemType, AnalysisItem> result = new LinkedHashMap<>(); // To maintain the order of execution
+    private Map<ResponseItemType, AnalysisItem<?>> getAlgorithmResults(List<Algorithm> algorithms, Document dom) {
+        Map<ResponseItemType, AnalysisItem<?>> result = new LinkedHashMap<>(); // To maintain the order of execution
 
         for (Algorithm algorithm : algorithms) {
             result.put(algorithm.getItemType(), algorithm.execute(dom));
