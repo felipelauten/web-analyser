@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Fix project &#10;&#10;- Fix broken generics&#10;- Fix connection to my-sql&#10;- removing ignored files from repo" />
+    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Ignoring .idea directory">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +55,10 @@
       <projects_view />
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.9.RELEASE/spring-data-commons-2.0.9.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.8.RELEASE/spring-core-5.0.8.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -71,9 +78,6 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
-  </component>
-  <component name="MavenRunner">
-    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
@@ -300,7 +304,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685876691548</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ignoring .idea directory">
+      <created>1685876999299</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685876999299</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Ignoring .idea directory">
+      <created>1685877010273</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685877010273</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -340,7 +358,8 @@
     <MESSAGE value="gitignore" />
     <MESSAGE value="gitignore update" />
     <MESSAGE value="Fix project &#10;&#10;- Fix broken generics&#10;- Fix connection to my-sql&#10;- removing ignored files from repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix project &#10;&#10;- Fix broken generics&#10;- Fix connection to my-sql&#10;- removing ignored files from repo" />
+    <MESSAGE value="Ignoring .idea directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignoring .idea directory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
