@@ -1,6 +1,6 @@
 package de.scout24.webanalyzerrest.algorithm;
 
-import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
+import de.scout24.webanalyzerrest.algorithm.exception.AlgorithmException;
 import de.scout24.webanalyzerrest.model.AnalysisItem;
 import de.scout24.webanalyzerrest.model.AnalysisItemBoolean;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier(LoginFormAlgorithm.ALGORITHM_NAME)
-public class LoginFormAlgorithm implements Algorithm {
+public class LoginFormAlgorithm implements Algorithm<Boolean> {
 
     public static final String ALGORITHM_NAME = "loginFormAlgorithm";
 
     @Override
-    public AnalysisItem execute(Document dom) throws AlgoruthmException {
+    public AnalysisItem<Boolean> execute(Document dom) throws AlgorithmException {
         Elements formTag = dom.select("form");
         if (formTag != null) {
             boolean loginFieldOk = false;
@@ -33,7 +33,7 @@ public class LoginFormAlgorithm implements Algorithm {
                     loginFieldOk = true;
                 }
 
-                if (inputName.contains("password") || inputName.contains("password")) {
+                if (inputName.contains("password")) {
                     passwordFieldOk = true;
                 }
             }

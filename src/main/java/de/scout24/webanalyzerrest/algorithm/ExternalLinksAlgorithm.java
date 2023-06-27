@@ -1,7 +1,7 @@
 package de.scout24.webanalyzerrest.algorithm;
 
 import de.scout24.webanalyzerrest.util.Counter;
-import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
+import de.scout24.webanalyzerrest.algorithm.exception.AlgorithmException;
 import de.scout24.webanalyzerrest.model.AdditionalInformation;
 import de.scout24.webanalyzerrest.model.AnalysisItem;
 import de.scout24.webanalyzerrest.model.AnalysisItemInteger;
@@ -20,14 +20,14 @@ import java.util.List;
 
 @Component
 @Qualifier(ExternalLinksAlgorithm.ALGORITHM_NAME)
-public class ExternalLinksAlgorithm extends PageLinksAbstractAlgorithm implements Algorithm {
+public class ExternalLinksAlgorithm extends PageLinksAbstractAlgorithm implements Algorithm<Integer> {
 
     public static final String ALGORITHM_NAME = "internalLinksAlgorithm";
 
     private static Logger LOG = LoggerFactory.getLogger(ExternalLinksAlgorithm.class);
 
     @Override
-    public AnalysisItem execute(Document dom) throws AlgoruthmException {
+    public AnalysisItem<Integer> execute(Document dom) throws AlgorithmException {
         List<Element> tags = dom.getElementsByTag(LINK_TAG);
         List<String> internalTagLinks = new ArrayList<>();
         Counter internalLinksCount = new Counter();

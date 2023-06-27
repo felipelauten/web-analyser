@@ -1,6 +1,6 @@
 package de.scout24.webanalyzerrest.algorithm;
 
-import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
+import de.scout24.webanalyzerrest.algorithm.exception.AlgorithmException;
 import de.scout24.webanalyzerrest.model.AnalysisItem;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
 import org.jsoup.nodes.Document;
@@ -17,7 +17,7 @@ import java.util.Optional;
  * @see de.scout24.webanalyzerrest.model.enums.ResponseItemType (I)
  * @see Document
  */
-public interface Algorithm {
+public interface Algorithm<T> {
 
     /**
      * Performs the analysis of the algorithm.
@@ -26,7 +26,7 @@ public interface Algorithm {
      * @return R - result
      * @throws Exception if something bad happens
      */
-    AnalysisItem execute(Document dom) throws AlgoruthmException;
+    AnalysisItem<T> execute(Document dom) throws AlgorithmException;
 
     /**
      * Common operation of the algorithms, use tag name to filter the dom tree and get its content.

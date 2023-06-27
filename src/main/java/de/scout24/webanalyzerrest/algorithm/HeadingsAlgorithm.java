@@ -1,6 +1,6 @@
 package de.scout24.webanalyzerrest.algorithm;
 
-import de.scout24.webanalyzerrest.algorithm.exception.AlgoruthmException;
+import de.scout24.webanalyzerrest.algorithm.exception.AlgorithmException;
 import de.scout24.webanalyzerrest.model.AnalysisItem;
 import de.scout24.webanalyzerrest.model.AnalysisItemMap;
 import de.scout24.webanalyzerrest.model.enums.ResponseItemType;
@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -17,13 +16,13 @@ import java.util.stream.Collectors;
 
 @Component
 @Qualifier(HeadingsAlgorithm.ALGORITHM_NAME)
-public class HeadingsAlgorithm implements Algorithm {
+public class HeadingsAlgorithm implements Algorithm<Map<String, Integer>> {
 
     public static final String ALGORITHM_NAME = "headingsAlgorigthm";
     private static final List<String> HEADER_TAGS = Arrays.asList("h1", "h2", "h3", "h4", "h5", "h6");
 
     @Override
-    public AnalysisItem execute(Document dom) throws AlgoruthmException {
+    public AnalysisItem<Map<String, Integer>> execute(Document dom) throws AlgorithmException {
         Map<String, Integer> result = HEADER_TAGS.stream()
                 .collect(Collectors.toMap(Function.identity(), header -> countNumberOfItems(header, dom)));
 

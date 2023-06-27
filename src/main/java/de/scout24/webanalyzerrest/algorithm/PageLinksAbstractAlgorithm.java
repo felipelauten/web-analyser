@@ -1,6 +1,8 @@
 package de.scout24.webanalyzerrest.algorithm;
 
-public abstract class PageLinksAbstractAlgorithm implements Algorithm {
+import java.util.Map;
+
+public abstract class PageLinksAbstractAlgorithm {
 
     public static final String LINK_TAG = "a";
     public static final String HREF_ATTR = "href";

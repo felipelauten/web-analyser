@@ -25,7 +25,9 @@ public class AnalysisOutputMemoryRepository {
         List<AnalysisOutput> outputList = analysisOutputById.get(ip);
         if (outputList != null) {
             outputList = new ArrayList<>(outputList); // To ensure that the list is editable
-            Optional<AnalysisOutput> analysisOutput = outputList.stream().filter(o -> o.getId() == item.getId()).findFirst();
+            Optional<AnalysisOutput> analysisOutput = outputList.stream()
+                    .filter(o -> o.getId().equals(item.getId()))
+                    .findFirst();
             if (analysisOutput.isPresent()) {
                 AnalysisOutput output = analysisOutput.get();
                 output.setId((long) idCounter.incrementAndGet());
