@@ -39,7 +39,7 @@ public class UrlAnalysisServiceImplTest {
         Long aLong = 0L;
 
         // when
-        Map<String, AnalysisStatus> result = service.linkHealthCheck(aLong);
+        service.linkHealthCheck(aLong);
     }
 
     @Test
