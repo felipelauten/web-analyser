@@ -1,1 +1,1 @@
-web: java -cp target/classes:target/dependency/* de.scout24.webanalyzerrest.WebAnalyzerRestApplication server
+web: java -cp target/classes:target/dependency/* com.devlauten.webanalyzerrest.WebAnalyzerRestApplication server
