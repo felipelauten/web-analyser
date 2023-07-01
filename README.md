@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/felipelauten/web-analyser/actions/workflows/maven.yml/badge.svg)](https://github.com/felipelauten/web-analyser/actions/workflows/maven.yml)
+
 # README #
 
 This little application is part of one of the recruitment processes I had in the past.
