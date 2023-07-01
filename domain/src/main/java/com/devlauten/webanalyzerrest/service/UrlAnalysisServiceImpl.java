@@ -47,7 +47,7 @@ public class UrlAnalysisServiceImpl implements UrlAnalysisService {
         }
         Optional<String> htmlContents = htmlClient.getHtmlFromUrl(input.getUrl());
 
-        if (!htmlContents.isPresent()) {
+        if (htmlContents.isEmpty()) {
             return new HashMap<>();
         }
 
@@ -125,12 +125,12 @@ public class UrlAnalysisServiceImpl implements UrlAnalysisService {
     }
 
     @Deprecated
-    private List<Algorithm> getAlgorithmList() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        List<Algorithm> algorithms = new ArrayList<>();
-        for (Class algorithm :
+    private List<Algorithm<?>> getAlgorithmList() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        List<Algorithm<?>> algorithms = new ArrayList<>();
+        for (Class<? extends Algorithm<?>> algorithm :
                 factory.getAvailableAlgorithms(HtmlVersion.HTML5)) { // FIXME Remove hardcoded HTML version
-            Constructor constructor = algorithm.getConstructor(); // Gets the default constructor
-            Algorithm algorithmObj = (Algorithm) constructor.newInstance();
+            Constructor<? extends Algorithm<?>> constructor = algorithm.getConstructor(); // Gets the default constructor
+            Algorithm<?> algorithmObj = constructor.newInstance();
             algorithms.add(algorithmObj);
         }
         return algorithms;

@@ -4,58 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Chore">
-      <change afterPath="$PROJECT_DIR$/data-relational/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/ports/UrlAnalysisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/WebAnalyzerRestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/WebAnalyzerRestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/AllLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/AllLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/ExternalLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/ExternalLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/HeadingsAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/HeadingsAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/HtmlPageTitleAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/HtmlPageTitleAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/InternalLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/InternalLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/LoginFormAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/LoginFormAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/PageLinksAbstractAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/PageLinksAbstractAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/config/AlgorithmConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/config/AlgorithmConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/config/AlgorithmFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/config/AlgorithmFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/algorithm/exception/AlgorithmException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/algorithm/exception/AlgorithmException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/controller/AnalysisController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/controller/ErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/controller/ErrorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AdditionalInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AdditionalInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AnalysisInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AnalysisInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AnalysisItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AnalysisItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AnalysisItemBoolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AnalysisItemBoolean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AnalysisItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AnalysisItemFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AnalysisItemInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AnalysisItemInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AnalysisItemMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AnalysisItemMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AnalysisItemString.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AnalysisItemString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/AnalysisOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/AnalysisOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/enums/AdditionalInformationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/enums/AdditionalInformationType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/enums/AnalysisStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/enums/AnalysisStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/enums/HtmlVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/enums/HtmlVersion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/model/enums/ResponseItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/entities/enums/ResponseItemType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/repository/AdditionalInformationDbRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/repository/AdditionalInformationDbRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/repository/AnalysisItemDbRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/repository/AnalysisItemDbRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/repository/AnalysisOutputMemoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/repository/AnalysisOutputRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/data/repository/AnalysisOutputRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/repository/RepositoryConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/repository/UrlAnalisysRestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/external/client/HtmlClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/service/UrlAnalisysService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/service/UrlAnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/service/UrlAnalysisServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/util/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzerrest/util/Counter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/devlauten/webanalyzerrest/WebAnalyzerRestApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/com/devlauten/webanalyzerrest/WebAnalyzerRestApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/devlauten/webanalyzerrest/service/UrlAnalysisServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/com/devlauten/webanalyzerrest/service/UrlAnalysisServiceImplTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Created modules and added configuration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -553,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687982217461</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Created modules and added configuration">
+      <created>1688202977550</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1688202977550</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -638,7 +594,8 @@
     <MESSAGE value="Fix pom. Update dependencies. Package renaming" />
     <MESSAGE value="Added simple test. Still pending fixing MockMvc Dependencies" />
     <MESSAGE value="Chore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chore" />
+    <MESSAGE value="Created modules and added configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created modules and added configuration" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/util/Counter.java">
