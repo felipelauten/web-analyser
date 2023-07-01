@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Fix Configuration" />
+    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Update java version on maven.yml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="chore/fix-domain" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -165,7 +165,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "chore/fix-domain",
+    "git-widget-placeholder": "master",
     "ignore.preview.features.used": "true",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "last_opened_file_path": "/Users/felipe/Java Developer/web-analyzer-rest",
@@ -198,7 +198,7 @@
       <command value="mvn spring-boot:run" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in web-analyzer">
+  <component name="RunManager" selected="Application.com.devlauten.webanalyzer.WebAnalyzerApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -206,12 +206,13 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="Run App" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzer.WebAnalyzerApplication" />
+    <configuration name="WebAnalyzerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzer.rest.WebAnalyzerApplication" />
       <module name="rest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.devlauten.webanalyzer.*" />
+          <option name="PATTERN" value="com.devlauten.webanalyzer.rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -225,11 +226,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in web-analyzer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="domain" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    <configuration name="com.devlauten.webanalyzer.WebAnalyzerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzer.WebAnalyzerApplication" />
+      <module name="rest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devlauten.webanalyzer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -251,22 +257,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebAnalyzerRestApplicationTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="domain" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.devlauten.webanalyzer.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.devlauten.webanalyzer.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzer.domain.WebAnalyzerRestApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WebAnalyzerRestApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="web-analyzer-rest" />
       <extension name="coverage">
@@ -278,6 +268,23 @@
       <option name="PACKAGE_NAME" value="com.devlauten.webanalyzerrest" />
       <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzer.WebAnalyzerRestApplicationTests" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebAnalyzerRestApplicationTests.testAnaliseEndpoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="web-analyzer-rest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devlauten.webanalyzer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.devlauten.webanalyzerrest" />
+      <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzer.WebAnalyzerRestApplicationTests" />
+      <option name="METHOD_NAME" value="testAnaliseEndpoint" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -386,21 +393,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Run App" />
-      <item itemvalue="JUnit.All in web-analyzer" />
+      <item itemvalue="Application.WebAnalyzerApplication" />
+      <item itemvalue="Application.com.devlauten.webanalyzer.WebAnalyzerApplication" />
+      <item itemvalue="JUnit.WebAnalyzerRestApplicationTests" />
       <item itemvalue="JUnit.AnalysisControllerIntegrationTest.testAnaliseEndpoint" />
-      <item itemvalue="JUnit.WebAnalyzerRestApplicationTests (1)" />
+      <item itemvalue="JUnit.WebAnalyzerRestApplicationTests.testAnaliseEndpoint" />
       <item itemvalue="Maven.Test" />
       <item itemvalue="Maven.Run" />
       <item itemvalue="Maven.Build" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in web-analyzer" />
-        <item itemvalue="JUnit.WebAnalyzerRestApplicationTests (1)" />
-        <item itemvalue="Application.Run App" />
-        <item itemvalue="JUnit.WebAnalyzerRestApplicationTests (1)" />
+        <item itemvalue="JUnit.WebAnalyzerRestApplicationTests.testAnaliseEndpoint" />
+        <item itemvalue="JUnit.WebAnalyzerRestApplicationTests" />
         <item itemvalue="JUnit.AnalysisControllerIntegrationTest.testAnaliseEndpoint" />
+        <item itemvalue="Application.com.devlauten.webanalyzer.WebAnalyzerApplication" />
+        <item itemvalue="Application.WebAnalyzerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -528,7 +536,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688204710861</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Removed default integration test, will do another later">
+      <created>1688204877371</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1688204877371</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update java version on maven.yml">
+      <created>1688204976826</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1688204976826</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -617,7 +639,9 @@
     <MESSAGE value="Small refactor" />
     <MESSAGE value="Git ignores" />
     <MESSAGE value="Fix Configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Configuration" />
+    <MESSAGE value="Removed default integration test, will do another later" />
+    <MESSAGE value="Update java version on maven.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update java version on maven.yml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
