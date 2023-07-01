@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Chore">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Created modules and added configuration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,9 +85,21 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
         <option name="useMavenConfig" value="true" />
+        <option name="usePluginRegistry" value="true" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
@@ -147,25 +158,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "fix/unit-tests",
-    "last_opened_file_path": "/Users/felipe/Java Developer/web-analyzer-rest",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;chore/modular-app&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felipe/Java Developer/web-analyzer-rest&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/felipe/IdeaProjects/web-analyser/data-relational/src/main/java/com/devlauten/webanalyzer/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.devlauten.webanalyzerrest.values" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/domain/src/test/java" />
+      <recent name="$PROJECT_DIR$/domain/src/main/resources" />
+      <recent name="$PROJECT_DIR$/domain/src/main/java" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.devlauten.webanalyzerrest.controller" />
@@ -176,13 +198,27 @@
       <command value="mvn spring-boot:run" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in web-analyzer-rest">
+  <component name="RunManager" selected="Application.WebAnalyzerRestApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="WebAnalyzerRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzer.rest.WebAnalyzerRestApplication" />
+      <module name="rest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devlauten.webanalyzer.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -232,27 +268,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebAnalyzerRestApplicationTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="web-analyzer-rest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.devlauten.webanalyzerrest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.devlauten.webanalyzerrest" />
-      <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzerrest.WebAnalyzerRestApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WebAnalyzerRestApplicationTests.testAnaliseEndpoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="web-analyzer-rest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.devlauten.webanalyzerrest.*" />
+          <option name="PATTERN" value="com.devlauten.webanalyzer.rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -367,10 +387,10 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.WebAnalyzerRestApplication" />
       <item itemvalue="JUnit.All in web-analyzer-rest" />
       <item itemvalue="JUnit.AnalysisControllerIntegrationTest" />
       <item itemvalue="JUnit.AnalysisControllerIntegrationTest.testAnaliseEndpoint" />
-      <item itemvalue="JUnit.WebAnalyzerRestApplicationTests (1)" />
       <item itemvalue="JUnit.WebAnalyzerRestApplicationTests.testAnaliseEndpoint" />
       <item itemvalue="Maven.Test" />
       <item itemvalue="Maven.Run" />
@@ -378,11 +398,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WebAnalyzerRestApplication" />
         <item itemvalue="JUnit.All in web-analyzer-rest" />
         <item itemvalue="JUnit.WebAnalyzerRestApplicationTests.testAnaliseEndpoint" />
         <item itemvalue="JUnit.AnalysisControllerIntegrationTest.testAnaliseEndpoint" />
         <item itemvalue="JUnit.AnalysisControllerIntegrationTest" />
-        <item itemvalue="JUnit.WebAnalyzerRestApplicationTests (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -482,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687982217461</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Created modules and added configuration">
+      <created>1688202977550</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1688202977550</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -567,18 +594,8 @@
     <MESSAGE value="Fix pom. Update dependencies. Package renaming" />
     <MESSAGE value="Added simple test. Still pending fixing MockMvc Dependencies" />
     <MESSAGE value="Chore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chore" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/service/UrlAnalysisServiceImpl.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Created modules and added configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created modules and added configuration" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/util/Counter.java">
