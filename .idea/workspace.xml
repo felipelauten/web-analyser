@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Fix pom. Update dependencies. Package renaming">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/devlauten/webanalyzerrest/controller/AnalysisControllerIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Chore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/devlauten/webanalyzerrest/WebAnalyzerRestApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/devlauten/webanalyzerrest/WebAnalyzerRestApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/devlauten/webanalyzerrest/service/UrlAnalysisServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/devlauten/webanalyzerrest/service/UrlAnalysisServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +176,7 @@
       <command value="mvn spring-boot:run" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WebAnalyzerRestApplicationTests.testAnaliseEndpoint">
+  <component name="RunManager" selected="JUnit.All in web-analyzer-rest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -383,10 +378,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in web-analyzer-rest" />
         <item itemvalue="JUnit.WebAnalyzerRestApplicationTests.testAnaliseEndpoint" />
         <item itemvalue="JUnit.AnalysisControllerIntegrationTest.testAnaliseEndpoint" />
         <item itemvalue="JUnit.AnalysisControllerIntegrationTest" />
-        <item itemvalue="JUnit.All in web-analyzer-rest" />
         <item itemvalue="JUnit.WebAnalyzerRestApplicationTests (1)" />
       </list>
     </recent_temporary>
@@ -473,7 +468,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687979536794</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added simple test. Still pending fixing MockMvc Dependencies">
+      <created>1687982172278</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687982172278</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Chore">
+      <created>1687982217461</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1687982217461</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -556,7 +565,9 @@
     <MESSAGE value="Heroku Procfile updated" />
     <MESSAGE value="Commenting out PropertySourcesPlaceholderConfigurer" />
     <MESSAGE value="Fix pom. Update dependencies. Package renaming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix pom. Update dependencies. Package renaming" />
+    <MESSAGE value="Added simple test. Still pending fixing MockMvc Dependencies" />
+    <MESSAGE value="Chore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,11 +576,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/devlauten/webanalyzerrest/service/UrlAnalysisServiceImpl.java</url>
           <line>81</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/devlauten/webanalyzerrest/WebAnalyzerRestApplicationTests.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
