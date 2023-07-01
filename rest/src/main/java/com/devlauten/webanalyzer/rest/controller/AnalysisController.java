@@ -1,10 +1,10 @@
 package com.devlauten.webanalyzer.rest.controller;
 
-import com.devlauten.webanalyzer.data.entities.AnalysisInput;
-import com.devlauten.webanalyzer.data.entities.AnalysisItem;
-import com.devlauten.webanalyzer.data.entities.enums.AnalysisStatus;
-import com.devlauten.webanalyzer.data.entities.enums.ResponseItemType;
-import com.devlauten.webanalyzerrest.ports.UrlAnalysisService;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisInput;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItem;
+import com.devlauten.webanalyzer.domain.data.entities.enums.AnalysisStatus;
+import com.devlauten.webanalyzer.domain.data.entities.enums.ResponseItemType;
+import com.devlauten.webanalyzer.domain.ports.UrlAnalysisService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
