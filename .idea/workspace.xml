@@ -5,33 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Fix GitHub actions">
-      <change afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/dto/AnalysisItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/dto/AnalysisRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/dto/AnalysisResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/devlauten/webanalyzer/domain/shared/ItemType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemBoolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemDataBoolean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemDataInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemDataMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemString.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/repository/AnalysisItemDbRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/repository/AnalysisItemDbRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/AllLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/AllLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/ExternalLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/ExternalLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/HeadingsAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/HeadingsAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/HtmlPageTitleAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/HtmlPageTitleAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/InternalLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/InternalLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/LoginFormAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/LoginFormAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/ports/UrlAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/ports/UrlAnalysisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/service/UrlAnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/service/UrlAnalysisServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/controller/AnalysisController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +59,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="chore/fix-domain" />
+        <entry key="$PROJECT_DIR$" value="swagger" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -190,25 +165,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/felipe/Java Developer/web-analyzer-rest&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/felipe/IdeaProjects/web-analyser/data-relational/src/main/java/com/devlauten/webanalyzer/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2908046&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "docker",
+    "ignore.preview.features.used": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "/Users/felipe/Java Developer/web-analyzer-rest",
+    "onboarding.tips.debug.path": "/Users/felipe/IdeaProjects/web-analyser/data-relational/src/main/java/com/devlauten/webanalyzer/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2908046",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "Docker"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.devlauten.webanalyzerrest.values" />
@@ -228,9 +203,10 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn spring-boot:run" />
+      <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.com.devlauten.webanalyzer.WebAnalyzerApplication">
+  <component name="RunManager" selected="Docker.Run on Docker">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -261,7 +237,6 @@
     <configuration name="com.devlauten.webanalyzer.WebAnalyzerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.devlauten.webanalyzer.WebAnalyzerApplication" />
       <module name="rest" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.devlauten.webanalyzer.*" />
@@ -436,9 +411,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Run on Docker" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="0.0.1" />
+          <option name="containerName" value="web-analyzer-snapshot-dev" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean install" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.WebAnalyzerApplication" />
       <item itemvalue="Application.com.devlauten.webanalyzer.WebAnalyzerApplication" />
+      <item itemvalue="Docker.Run on Docker" />
       <item itemvalue="JUnit.AnalysisControllerIntegrationTest.testAnaliseEndpoint" />
       <item itemvalue="JUnit.WebAnalyzerRestApplicationTests" />
       <item itemvalue="JUnit.WebAnalyzerRestApplicationTests.testAnaliseEndpoint" />
@@ -697,6 +685,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/de/scout24/webanalyzerrest/util/Counter.java">
