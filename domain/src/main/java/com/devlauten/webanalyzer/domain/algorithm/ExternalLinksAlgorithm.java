@@ -1,8 +1,8 @@
 package com.devlauten.webanalyzer.domain.algorithm;
 
 import com.devlauten.webanalyzer.domain.data.entities.AdditionalInformation;
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItem;
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemInteger;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemData;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemDataInteger;
 import com.devlauten.webanalyzer.domain.data.entities.enums.AdditionalInformationType;
 import com.devlauten.webanalyzer.domain.data.entities.enums.ResponseItemType;
 import com.devlauten.webanalyzer.domain.algorithm.exception.AlgorithmException;
@@ -27,7 +27,7 @@ public class ExternalLinksAlgorithm extends PageLinksAbstractAlgorithm implement
     private static Logger LOG = LoggerFactory.getLogger(ExternalLinksAlgorithm.class);
 
     @Override
-    public AnalysisItem<Integer> execute(Document dom) throws AlgorithmException {
+    public AnalysisItemData<Integer> execute(Document dom) throws AlgorithmException {
         List<Element> tags = dom.getElementsByTag(LINK_TAG);
         List<String> internalTagLinks = new ArrayList<>();
         Counter internalLinksCount = new Counter();
@@ -43,7 +43,7 @@ public class ExternalLinksAlgorithm extends PageLinksAbstractAlgorithm implement
         LOG.info(String.format("Found %s external links in the page:", internalLinksCount.getCount()));
         internalTagLinks.stream().forEach(link -> LOG.info(link));
 
-        AnalysisItem<Integer> item = new AnalysisItemInteger(internalLinksCount.getCount(),
+        AnalysisItemData<Integer> item = new AnalysisItemDataInteger(internalLinksCount.getCount(),
                 ResponseItemType.EXTERNAL_LINKS);
         AdditionalInformation additionalInformation = new AdditionalInformation("Internal Links Check",
                 "additionalInfo", AdditionalInformationType.INTERNAL_LINKS_ANALYSIS);

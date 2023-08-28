@@ -3,16 +3,14 @@ package com.devlauten.webanalyzer.domain.data.entities;
 import com.devlauten.webanalyzer.domain.data.entities.enums.ResponseItemType;
 import jakarta.persistence.*;
 
-import java.io.Serializable;
-
 /**
- * Generic object containing the analysis item
+ * Data object containing the analysis item
  *
  * @param <Type> of evaluated value
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class AnalysisItem<Type> implements Serializable {
+public abstract class AnalysisItemData<Type> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,13 +23,13 @@ public abstract class AnalysisItem<Type> implements Serializable {
     @OneToOne(fetch = FetchType.LAZY , cascade = { CascadeType.REMOVE })
     private AdditionalInformation additionalInformation;
 
-    protected AnalysisItem() {
+    protected AnalysisItemData() {
         // for JPA
     }
 
-    public AnalysisItem(AnalysisOutput output, Type algorithmResult, ResponseItemType itemType) {
+    public AnalysisItemData(AnalysisOutput output, Type algorithmResult, ResponseItemType itemType) {
         this.output = output;
-        this.setResultType(algorithmResult);
+        this.setResult(algorithmResult);
         this.setItemType(itemType);
     }
 
@@ -49,9 +47,9 @@ public abstract class AnalysisItem<Type> implements Serializable {
 
     public abstract void setOutput(AnalysisOutput output);
 
-    public abstract Type getResultType();
+    public abstract Type getResult();
 
-    protected abstract void setResultType(Type resultType);
+    protected abstract void setResult(Type result);
 
     public boolean isAdditionalInformationPresent() { return additionalInformation != null; }
 
@@ -63,4 +61,10 @@ public abstract class AnalysisItem<Type> implements Serializable {
         this.additionalInformation = additionalInformation;
     }
 
+    @Override
+    public String toString() {
+        return "AnalysisItemData{" +
+                "id=" + id +
+                '}';
+    }
 }

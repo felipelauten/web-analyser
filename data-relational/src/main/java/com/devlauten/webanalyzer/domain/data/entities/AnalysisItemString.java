@@ -9,12 +9,12 @@ import java.util.Objects;
 
 @Entity
 @JsonAutoDetect
-public class AnalysisItemString extends AnalysisItem<String> {
+public class AnalysisItemString extends AnalysisItemData<String> {
 
     @Enumerated(value = EnumType.ORDINAL)
     private ResponseItemType itemType;
     @Column(name = "resultTypeString")
-    private String resultType;
+    private String result;
     @ManyToOne
     private AnalysisOutput output;
 
@@ -23,7 +23,7 @@ public class AnalysisItemString extends AnalysisItem<String> {
     }
 
     public AnalysisItemString(String result, ResponseItemType itemType) {
-        this.setResultType(result);
+        this.setResult(result);
         this.setItemType(itemType);
     }
 
@@ -43,13 +43,13 @@ public class AnalysisItemString extends AnalysisItem<String> {
     }
 
     @Override
-    public String getResultType() {
-        return resultType;
+    public String getResult() {
+        return result;
     }
 
     @Override
-    protected void setResultType(String resultType) {
-        this.resultType = resultType;
+    protected void setResult(String result) {
+        this.result = result;
     }
 
     @Override
@@ -58,14 +58,14 @@ public class AnalysisItemString extends AnalysisItem<String> {
         if (!(o instanceof AnalysisItemString)) return false;
         AnalysisItemString that = (AnalysisItemString) o;
         return getItemType() == that.getItemType() &&
-                Objects.equals(getResultType(), that.getResultType()) &&
+                Objects.equals(getResult(), that.getResult()) &&
                 Objects.equals(output, that.output);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(getItemType(), getResultType(), output);
+        return Objects.hash(getItemType(), getResult(), output);
     }
 
     @Override

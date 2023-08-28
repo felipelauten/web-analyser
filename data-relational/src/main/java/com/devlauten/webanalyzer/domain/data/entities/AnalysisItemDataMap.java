@@ -8,23 +8,23 @@ import org.hibernate.annotations.FetchMode;
 import java.util.Map;
 
 @Entity
-public class AnalysisItemMap extends AnalysisItem<Map<String, Integer>> {
+public class AnalysisItemDataMap extends AnalysisItemData<Map<String, Integer>> {
 
     @Enumerated(value = EnumType.ORDINAL)
     private ResponseItemType itemType;
     @ElementCollection(fetch = FetchType.EAGER)
 
     @Fetch(FetchMode.SELECT)
-    private Map<String, Integer> resultType;
+    private Map<String, Integer> result;
     @ManyToOne
     private AnalysisOutput output;
 
-    protected AnalysisItemMap() {
+    protected AnalysisItemDataMap() {
         // for JPA
     }
 
-    public AnalysisItemMap(Map<String, Integer> result, ResponseItemType itemType) {
-        this.setResultType(result);
+    public AnalysisItemDataMap(Map<String, Integer> result, ResponseItemType itemType) {
+        this.setResult(result);
         this.setItemType(itemType);
     }
 
@@ -54,12 +54,12 @@ public class AnalysisItemMap extends AnalysisItem<Map<String, Integer>> {
     }
 
     @Override
-    public Map<String, Integer> getResultType() {
-        return resultType;
+    public Map<String, Integer> getResult() {
+        return result;
     }
 
     @Override
-    protected void setResultType(Map<String, Integer> resultType) {
-        this.resultType = resultType;
+    protected void setResult(Map<String, Integer> result) {
+        this.result = result;
     }
 }

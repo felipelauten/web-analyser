@@ -9,26 +9,26 @@ import java.util.Objects;
 
 @Entity
 @JsonAutoDetect
-public class AnalysisItemBoolean extends AnalysisItem<Boolean> {
+public class AnalysisItemDataBoolean extends AnalysisItemData<Boolean> {
 
     @Enumerated(value = EnumType.ORDINAL)
     private ResponseItemType itemType;
     @Column(name = "resultTypeBoolean")
-    private Boolean resultType;
+    private Boolean result;
     @ManyToOne
     private AnalysisOutput output;
 
-    protected AnalysisItemBoolean() {
+    protected AnalysisItemDataBoolean() {
         // for JPA
     }
 
-    public AnalysisItemBoolean(Boolean result, ResponseItemType itemType) {
-        this.setResultType(result);
+    public AnalysisItemDataBoolean(Boolean result, ResponseItemType itemType) {
+        this.setResult(result);
         this.setItemType(itemType);
     }
 
-    public AnalysisItemBoolean(Boolean result) {
-        this.setResultType(result);
+    public AnalysisItemDataBoolean(Boolean result) {
+        this.setResult(result);
     }
 
     public ResponseItemType getItemType() {
@@ -41,13 +41,13 @@ public class AnalysisItemBoolean extends AnalysisItem<Boolean> {
     }
 
     @Override
-    public Boolean getResultType() {
-        return resultType;
+    public Boolean getResult() {
+        return result;
     }
 
     @Override
-    protected void setResultType(Boolean resultType) {
-        this.resultType = resultType;
+    protected void setResult(Boolean result) {
+        this.result = result;
     }
 
     @Override
@@ -58,17 +58,17 @@ public class AnalysisItemBoolean extends AnalysisItem<Boolean> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AnalysisItemBoolean)) return false;
-        AnalysisItemBoolean that = (AnalysisItemBoolean) o;
+        if (!(o instanceof AnalysisItemDataBoolean)) return false;
+        AnalysisItemDataBoolean that = (AnalysisItemDataBoolean) o;
         return getItemType() == that.getItemType() &&
-                Objects.equals(getResultType(), that.getResultType()) &&
+                Objects.equals(getResult(), that.getResult()) &&
                 Objects.equals(output, that.output);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(getItemType(), getResultType(), output);
+        return Objects.hash(getItemType(), getResult(), output);
     }
 
     @Override

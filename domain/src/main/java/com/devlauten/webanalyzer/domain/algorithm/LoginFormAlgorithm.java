@@ -1,7 +1,7 @@
 package com.devlauten.webanalyzer.domain.algorithm;
 
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItem;
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemBoolean;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemData;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemDataBoolean;
 import com.devlauten.webanalyzer.domain.data.entities.enums.ResponseItemType;
 import com.devlauten.webanalyzer.domain.algorithm.exception.AlgorithmException;
 import org.jsoup.nodes.Document;
@@ -17,7 +17,7 @@ public class LoginFormAlgorithm implements Algorithm<Boolean> {
     public static final String ALGORITHM_NAME = "loginFormAlgorithm";
 
     @Override
-    public AnalysisItem<Boolean> execute(Document dom) throws AlgorithmException {
+    public AnalysisItemData<Boolean> execute(Document dom) throws AlgorithmException {
         Elements formTag = dom.select("form");
         if (formTag != null) {
             boolean loginFieldOk = false;
@@ -38,7 +38,7 @@ public class LoginFormAlgorithm implements Algorithm<Boolean> {
                 }
             }
 
-            return new AnalysisItemBoolean(loginFieldOk && passwordFieldOk, ResponseItemType.LOGIN_FORM);
+            return new AnalysisItemDataBoolean(loginFieldOk && passwordFieldOk, ResponseItemType.LOGIN_FORM);
         }
 
 

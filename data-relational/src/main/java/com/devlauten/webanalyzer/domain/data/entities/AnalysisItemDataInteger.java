@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @JsonAutoDetect
-public class AnalysisItemInteger extends AnalysisItem<Integer> {
+public class AnalysisItemDataInteger extends AnalysisItemData<Integer> {
 
     @Enumerated(value = EnumType.ORDINAL)
     private ResponseItemType itemType;
@@ -14,14 +14,14 @@ public class AnalysisItemInteger extends AnalysisItem<Integer> {
     private AnalysisOutput output;
 
     @Column(name = "resultTypeInteger")
-    private Integer resultType;
+    private Integer result;
 
-    protected AnalysisItemInteger() {
+    protected AnalysisItemDataInteger() {
         // for JPA
     }
 
-    public AnalysisItemInteger(Integer result, ResponseItemType itemType) {
-        this.setResultType(result);
+    public AnalysisItemDataInteger(Integer result, ResponseItemType itemType) {
+        this.setResult(result);
         this.setItemType(itemType);
     }
 
@@ -35,13 +35,13 @@ public class AnalysisItemInteger extends AnalysisItem<Integer> {
     }
 
     @Override
-    public Integer getResultType() {
-        return resultType;
+    public Integer getResult() {
+        return result;
     }
 
     @Override
-    protected void setResultType(Integer resultType) {
-        this.resultType = resultType;
+    protected void setResult(Integer result) {
+        this.result = result;
     }
 
     @Override

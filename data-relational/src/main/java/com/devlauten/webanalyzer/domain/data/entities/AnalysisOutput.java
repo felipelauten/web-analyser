@@ -29,10 +29,10 @@ public class AnalysisOutput implements Serializable {
     private AnalysisStatus status;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "output")
-    private List<AnalysisItem<?>> analysisItems;
+    private List<AnalysisItemData<?>> analysisItemData;
 
     @Transient
-    private Map<ResponseItemType, AnalysisItem<?>> itemsByAnalysisItem;
+    private Map<ResponseItemType, AnalysisItemData<?>> itemsByAnalysisItem;
 
     public AnalysisOutput() {
         // For JPA
@@ -43,7 +43,7 @@ public class AnalysisOutput implements Serializable {
         this.status = status;
     }
 
-    public AnalysisOutput(AnalysisStatus status, Map<ResponseItemType, AnalysisItem<?>> itemsByAnalysisItem) {
+    public AnalysisOutput(AnalysisStatus status, Map<ResponseItemType, AnalysisItemData<?>> itemsByAnalysisItem) {
         this.status = status;
         this.itemsByAnalysisItem = itemsByAnalysisItem;
         buildList();
@@ -65,31 +65,31 @@ public class AnalysisOutput implements Serializable {
         this.status = status;
     }
 
-    public List<AnalysisItem<?>> getAnalysisItems() {
-        return analysisItems;
+    public List<AnalysisItemData<?>> getAnalysisItems() {
+        return analysisItemData;
     }
 
-    public void setAnalysisItems(List<AnalysisItem<?>> analysisItems) {
-        this.analysisItems = analysisItems;
+    public void setAnalysisItems(List<AnalysisItemData<?>> analysisItemData) {
+        this.analysisItemData = analysisItemData;
     }
 
-    public Map<ResponseItemType, AnalysisItem<?>> getItemsByAnalysisItem() {
+    public Map<ResponseItemType, AnalysisItemData<?>> getItemsByAnalysisItem() {
         return itemsByAnalysisItem;
     }
 
-    public void setItemsByAnalysisItem(Map<ResponseItemType, AnalysisItem<?>> itemsByAnalysisItem) {
+    public void setItemsByAnalysisItem(Map<ResponseItemType, AnalysisItemData<?>> itemsByAnalysisItem) {
         this.itemsByAnalysisItem = itemsByAnalysisItem;
     }
 
     private void buildMap() {
-        if (this.itemsByAnalysisItem != null && CollectionUtils.isNotEmpty(this.analysisItems)) {
-            itemsByAnalysisItem = analysisItems.stream().collect(Collectors.toMap(AnalysisItem::getItemType, v -> v));
+        if (this.itemsByAnalysisItem != null && CollectionUtils.isNotEmpty(this.analysisItemData)) {
+            itemsByAnalysisItem = analysisItemData.stream().collect(Collectors.toMap(AnalysisItemData::getItemType, v -> v));
         }
     }
 
     private void buildList() {
         if (MapUtils.isNotEmpty(itemsByAnalysisItem)) {
-            this.analysisItems =
+            this.analysisItemData =
                     itemsByAnalysisItem.keySet().stream()
                             .map(key -> itemsByAnalysisItem.get(key))
                             .collect(Collectors.toList());

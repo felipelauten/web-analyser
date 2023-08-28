@@ -1,7 +1,7 @@
 package com.devlauten.webanalyzer.rest.controller;
 
 import com.devlauten.webanalyzer.domain.data.entities.AnalysisInput;
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItem;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemData;
 import com.devlauten.webanalyzer.domain.data.entities.enums.AnalysisStatus;
 import com.devlauten.webanalyzer.domain.data.entities.enums.ResponseItemType;
 import com.devlauten.webanalyzer.domain.ports.UrlAnalysisService;
@@ -33,7 +33,7 @@ public class AnalysisController {
     private final UrlAnalysisService service;
 
     @RequestMapping(value = "/analyze", method = RequestMethod.POST)
-    public Map<ResponseItemType, AnalysisItem<?>> performAnalysisByURL(@RequestBody AnalysisInput input, HttpServletRequest request) {
+    public Map<ResponseItemType, AnalysisItemData<?>> performAnalysisByURL(@RequestBody AnalysisInput input, HttpServletRequest request) {
 
         if (input == null || StringUtils.isEmpty(input.getUrl())) {
             LOG.warn("User sent empty URL");

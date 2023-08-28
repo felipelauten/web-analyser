@@ -43,7 +43,7 @@ public class UrlAnalysisServiceImpl implements UrlAnalysisService {
 
     @Override
     @Transactional
-    public Map<ResponseItemType, AnalysisItem<?>> analyseRemoteUrl(AnalysisInput input, String ip) throws Exception {
+    public Map<ResponseItemType, AnalysisItemData<?>> analyseRemoteUrl(AnalysisInput input, String ip) throws Exception {
         if (input == null || StringUtils.isEmpty(input.getUrl())) {
             throw new Exception("Invalid input object");
         }
@@ -60,15 +60,15 @@ public class UrlAnalysisServiceImpl implements UrlAnalysisService {
         dom.setBaseUri(input.getUrl());
 
         List<Algorithm<?>> algorithms = factory.getAvailableAlgorithm();
-        Map<ResponseItemType, AnalysisItem<?>> resultMap = getAlgorithmResults(algorithms, dom);
+        Map<ResponseItemType, AnalysisItemData<?>> resultMap = getAlgorithmResults(algorithms, dom);
 
         AnalysisOutput analysisOutput = new AnalysisOutput(AnalysisStatus.OK, resultMap);
         outputRepository.save(analysisOutput);
 
         // Saves all additional information (if present)
         List<AdditionalInformation> informationList = resultMap.values().stream()
-                .filter(AnalysisItem::isAdditionalInformationPresent)
-                .map(AnalysisItem::getAdditionalInformation)
+                .filter(AnalysisItemData::isAdditionalInformationPresent)
+                .map(AnalysisItemData::getAdditionalInformation)
                 .collect(Collectors.toList());
         additionalInformationRepository.saveAll(informationList);
 
@@ -92,10 +92,10 @@ public class UrlAnalysisServiceImpl implements UrlAnalysisService {
             return Collections.emptyMap();
         }
 
-        for (AnalysisItem<?> item: output.get().getAnalysisItems()) {
+        for (AnalysisItemData<?> item: output.get().getAnalysisItems()) {
             if (ResponseItemType.ALL_LINKS_MAP.equals(item.getItemType())) {
-                AnalysisItemMap itemMap = (AnalysisItemMap) item;
-                Map<String, Integer> linkMap =  itemMap.getResultType();
+                AnalysisItemDataMap itemMap = (AnalysisItemDataMap) item;
+                Map<String, Integer> linkMap =  itemMap.getResult();
                 for (String link: linkMap.keySet()) {
                     if (htmlClient.checkUrlConnectivity(link)) {
                         map.put(link, AnalysisStatus.OK);
@@ -116,8 +116,8 @@ public class UrlAnalysisServiceImpl implements UrlAnalysisService {
      * @param dom        - HTML dom tree
      * @return map
      */
-    private Map<ResponseItemType, AnalysisItem<?>> getAlgorithmResults(List<Algorithm<?>> algorithms, Document dom) {
-        Map<ResponseItemType, AnalysisItem<?>> result = new LinkedHashMap<>(); // To maintain the order of execution
+    private Map<ResponseItemType, AnalysisItemData<?>> getAlgorithmResults(List<Algorithm<?>> algorithms, Document dom) {
+        Map<ResponseItemType, AnalysisItemData<?>> result = new LinkedHashMap<>(); // To maintain the order of execution
 
         for (Algorithm algorithm : algorithms) {
             result.put(algorithm.getItemType(), algorithm.execute(dom));

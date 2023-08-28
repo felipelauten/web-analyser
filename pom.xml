@@ -31,6 +31,13 @@
 		<java.version>17</java.version>
 	</properties>
 
+    <distributionManagement>
+        <repository>
+            <id>space-maven</id>
+            <url>https://maven.pkg.jetbrains.space/devlauten/p/main/maven</url>
+        </repository>
+    </distributionManagement>
+
 	<dependencies>
         <!-- Commons -->
 		<dependency>

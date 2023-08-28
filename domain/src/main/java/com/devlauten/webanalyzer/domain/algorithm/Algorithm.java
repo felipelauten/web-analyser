@@ -1,6 +1,6 @@
 package com.devlauten.webanalyzer.domain.algorithm;
 
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItem;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemData;
 import com.devlauten.webanalyzer.domain.data.entities.enums.ResponseItemType;
 import com.devlauten.webanalyzer.domain.algorithm.exception.AlgorithmException;
 import org.jsoup.nodes.Document;
@@ -26,7 +26,7 @@ public interface Algorithm<T> {
      * @return R - result
      * @throws Exception if something bad happens
      */
-    AnalysisItem<T> execute(Document dom) throws AlgorithmException;
+    AnalysisItemData<T> execute(Document dom) throws AlgorithmException;
 
     /**
      * Common operation of the algorithms, use tag name to filter the dom tree and get its content.

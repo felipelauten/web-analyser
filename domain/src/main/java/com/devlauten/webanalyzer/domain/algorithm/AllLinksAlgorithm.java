@@ -1,7 +1,7 @@
 package com.devlauten.webanalyzer.domain.algorithm;
 
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItem;
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemMap;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemData;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemDataMap;
 import com.devlauten.webanalyzer.domain.data.entities.enums.ResponseItemType;
 import com.devlauten.webanalyzer.domain.algorithm.exception.AlgorithmException;
 import com.devlauten.webanalyzer.domain.util.Counter;
@@ -25,7 +25,7 @@ public class AllLinksAlgorithm extends PageLinksAbstractAlgorithm implements Alg
     private static Logger LOG = LoggerFactory.getLogger(InternalLinksAlgorithm.class);
 
     @Override
-    public AnalysisItem<Map<String, Integer>> execute(Document dom) throws AlgorithmException {
+    public AnalysisItemData<Map<String, Integer>> execute(Document dom) throws AlgorithmException {
         List<Element> tags = dom.getElementsByTag(LINK_TAG);
         Counter linksCount = new Counter();
         Map<String, Integer> allLinksCount = new HashMap<>();
@@ -45,7 +45,7 @@ public class AllLinksAlgorithm extends PageLinksAbstractAlgorithm implements Alg
         }
         LOG.info(String.format("Found %s external links in the page:", linksCount.getCount()));
 
-        return new AnalysisItemMap(allLinksCount, ResponseItemType.ALL_LINKS_MAP);
+        return new AnalysisItemDataMap(allLinksCount, ResponseItemType.ALL_LINKS_MAP);
     }
 
     @Override

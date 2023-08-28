@@ -1,6 +1,6 @@
 package com.devlauten.webanalyzer.domain.algorithm;
 
-import com.devlauten.webanalyzer.domain.data.entities.AnalysisItem;
+import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemData;
 import com.devlauten.webanalyzer.domain.data.entities.AnalysisItemString;
 import com.devlauten.webanalyzer.domain.data.entities.enums.ResponseItemType;
 import com.devlauten.webanalyzer.domain.algorithm.exception.AlgorithmException;
@@ -20,7 +20,7 @@ public class HtmlPageTitleAlgorithm implements Algorithm<String> {
     private static final String TITLE_TAG = "title";
 
     @Override
-    public AnalysisItem<String> execute(Document dom) throws AlgorithmException {
+    public AnalysisItemData<String> execute(Document dom) throws AlgorithmException {
         return dom.getAllElements().stream()
                 .map(element -> findByTagName(element, TITLE_TAG))
                 .filter(Optional::isPresent)
