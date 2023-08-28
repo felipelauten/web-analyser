@@ -18,7 +18,7 @@ job("Deploy app to Space") {
     container(displayName = "Run mvn install", image = "maven:latest") {
         shellScript {
             content = """
-	            mvn deploy
+	            mvn clean verify deploy
             """
         }
     }
