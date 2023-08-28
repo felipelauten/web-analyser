@@ -13,7 +13,6 @@ import java.util.Optional;
 /**
  * Definition of algorithm used to analyse the HTML page
  *
- * @see HtmlVersion (R)
  * @see ResponseItemType (I)
  * @see Document
  */
