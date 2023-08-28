@@ -4,34 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Fix GitHub actions">
-      <change afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/dto/AnalysisItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/dto/AnalysisRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/dto/AnalysisResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/com/devlauten/webanalyzer/domain/shared/ItemType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="d85f5f63-bac2-402b-9007-5147de18427b" name="Default" comment="Removing missing JavaDoc attribute">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemBoolean.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemDataBoolean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemDataInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemDataMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemString.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisItemString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/entities/AnalysisOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/repository/AnalysisItemDbRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-relational/src/main/java/com/devlauten/webanalyzer/domain/data/repository/AnalysisItemDbRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/AllLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/AllLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/ExternalLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/ExternalLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/HeadingsAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/HeadingsAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/HtmlPageTitleAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/HtmlPageTitleAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/InternalLinksAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/InternalLinksAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/LoginFormAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/algorithm/LoginFormAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/ports/UrlAnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/ports/UrlAnalysisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/service/UrlAnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/devlauten/webanalyzer/domain/service/UrlAnalysisServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/controller/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/com/devlauten/webanalyzer/rest/controller/AnalysisController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -594,7 +568,23 @@
       <option name="project" value="LOCAL" />
       <updated>1688204976826</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Some refactor of the data layer">
+      <option name="closed" value="true" />
+      <created>1693198445120</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1693198445120</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Removing missing JavaDoc attribute">
+      <option name="closed" value="true" />
+      <created>1693198503681</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1693198503681</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -685,7 +675,9 @@
     <MESSAGE value="Fix Configuration" />
     <MESSAGE value="Removed default integration test, will do another later" />
     <MESSAGE value="Update java version on maven.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update java version on maven.yml" />
+    <MESSAGE value="Some refactor of the data layer" />
+    <MESSAGE value="Removing missing JavaDoc attribute" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing missing JavaDoc attribute" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
