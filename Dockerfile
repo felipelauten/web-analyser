@@ -1,10 +1,10 @@
 FROM maven:3.9.8-sapmachine-22 AS builder
-
 LABEL authors="DevLauten"
+
 WORKDIR /build
 COPY . .
-
-RUN ["mvn", "-B", "package", "--file", "pom.xml"]
+RUN ["mvn", "test"]
+RUN ["mvn", "-B", "package", "-DskipTests", "--file", "pom.xml"]
 
 FROM ubuntu:latest
 
