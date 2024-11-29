@@ -29,14 +29,14 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: "Deploy to DevLauten's Hostinger Server
+    - name: 'Hostinger Deploy'
       uses: appleboy/ssh-action@v1.2.0
       with:
         host: ${{ secrets.HOST }}
         username: linuxserver.io
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: whoami
+        script: 'docker build -m "pagedoctor" . && docker run pagedoctor:latest'
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
