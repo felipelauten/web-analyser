@@ -1,10 +1,10 @@
-FROM maven:latest AS builder
+FROM ubuntu:latest AS builder
 
 LABEL authors="DevLauten"
 WORKDIR /build
 COPY . .
 
-RUN ["mvn", "-B", "package", "--file", "pom.xml"]
+RUN ["./mvnw", "-B", "package", "--file", "pom.xml"]
 
 FROM ubuntu:latest
 
